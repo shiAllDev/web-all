@@ -1,0 +1,107 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	font-style: unset;
+	text-decoration: none;
+}
+
+input,
+button {
+	border: none;
+	outline: none;
+}
+body {
+	min-height: 100vh;
+	font-family: "HarmonyOSHans", "PingFang SC", "HarmonyOS Sans Regular",
+		Helvetica Neue, Microsoft YaHei, sans-serif;
+	background: url(https://images2.alphacoders.com/556/556062.jpg) center
+		center/cover no-repeat;
+	background: url(https://images7.alphacoders.com/130/1309514.jpg) center center/cover no-repeat;
+}
+
+/*======================= animation keyframes =========================*/
+@keyframes hide2show {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/*====================== main elements style ===============================*/
+.side-btn-wrap,
+.side-btn-wrap .btn-sub-wrap {
+	border-radius: 0.35em;
+	backdrop-filter: blur(3px);
+	background-color: rgba(255, 255, 255, 0.5);
+	box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.side-btn-wrap {
+	position: fixed;
+	top: 100%;
+	transform: translateY(-105%);
+	left: calc(100% - 3em);
+
+	padding-top: 10px;
+
+	font-size: 24px;
+	z-index: 999;
+}
+
+.side-btn-wrap .btn-list-wrap {
+	display: flex;
+	flex-flow: column wrap;
+	gap: 2px;
+	padding: 0.25em 0.2em;
+}
+
+.side-btn-wrap .btn-list-wrap .btn {
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	padding: 0.25em 0.25em;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	border-radius: 0.25em;
+}
+
+/* 设置次级按钮列表 */
+.side-btn-wrap .btn .btn-sub-wrap {
+	display: none;
+	position: absolute;
+	right: calc(100%);
+	top: 50%;
+	transform: translateY(-50%);
+
+	padding: 0.25rem;
+	margin-right: 15px;
+	transition: all 0.2s ease;
+	background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* 设置与父按钮平滑连接区域，防止丢失hover */
+.side-btn-wrap .btn .btn-sub-wrap::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -15px;
+	width: 15px;
+	height: 100%;
+}
+
+.side-btn-wrap .btn:hover {
+	color: #005eff;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.side-btn-wrap .btn:hover > .btn-sub-wrap {
+	display: flex;
+	color: #000;
+	animation: hide2show 0.5s ease 0s backwards;
+}

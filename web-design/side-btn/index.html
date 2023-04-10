@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>side button</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <ul style="width: fit-content; padding: 1.5em; font-size: 24px; margin: 0 auto; position: relative; top: 2rem; background: #fff8; backdrop-filter: blur(3px);">
+            <h3>侧边按钮 功能说明</h4>
+            <li>背景虚幻</li>
+            <li>包含次级按钮：如按钮列表，二维码图片等</li>
+            <li>鼠标拖拽移动</li>
+        </ul>
+    </div>
+    <!-- 侧边按钮容器，定位等 -->
+    <div class="side-btn-wrap" drag="true">
+        <!-- 按钮列表容器 -->
+        <div class="btn-list-wrap">
+            <div class="btn fa fa-home"></div>
+            <div class="btn fa fa-arrow-up"></div>
+            <div class="btn fa fa-qrcode">
+                <!-- 次级按钮容器 -->
+                <div class="btn-sub-wrap">
+                    <img src="./qrcode_github.com.png" style="width: 150px;" alt="">
+                </div>
+            </div>
+            <div class="btn fa fa-cog">
+                <!-- 次级按钮容器 -->
+                <div class="btn-sub-wrap btn-list-wrap">
+                    <div class="btn fa fa-bell"></div>
+                    <div class="btn fa fa-child"></div>
+                    <div class="btn fa fa-cloud"></div>
+                </div>
+            </div>
+            <div class="btn fa fa-commenting"></div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

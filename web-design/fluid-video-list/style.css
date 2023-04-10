@@ -1,0 +1,280 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	font-family: "HarmonyOSHans", "PingFang SC", "HarmonyOS Sans Regular",
+		Helvetica Neue, Microsoft YaHei, sans-serif;
+}
+
+a {
+	font-style: unset;
+	text-decoration: none;
+}
+
+input,
+button {
+	border: none;
+	outline: none;
+}
+
+/*================================== main css ==================================*/
+
+:root {
+	--screen-font-size: 12px;
+}
+
+.container {
+	width: calc(100vw - 4rem);
+	margin: 0 auto;
+	padding: 10px 0;
+}
+
+/* =========== 最底层 wrap =========== */
+.video-list-wrap {
+	width: 100%;
+	margin: 0 auto;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 0.5rem;
+	transition: all 0.5s ease;
+}
+
+.video-list-wrap[box-shadow="bshadow"] {
+	box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+
+.video-list-wrap .video-item a {
+	color: #000;
+	cursor: pointer;
+}
+
+.video-list-wrap .video-item a:hover {
+	color: #0a59f7;
+	transition: all 0.2s ease;
+}
+
+.video-list-wrap .wrap-header {
+	position: relative;
+	margin-bottom: 0.5rem;
+}
+
+.video-list-wrap .wrap-header .wrap-title {
+	display: inline-block;
+	padding: 0 1rem 0 1rem;
+	color: #0a59f7;
+	--bg-bd-wd: 3px;
+	--bg-bd-ht: 0.6rem;
+	background: linear-gradient(to left, #317af7, #317af7) left top no-repeat,
+		linear-gradient(to bottom, #317af7, #317af7) left top no-repeat,
+		linear-gradient(to left, #317af7, #317af7) right top no-repeat,
+		linear-gradient(to bottom, #317af7, #317af7) right top no-repeat,
+		linear-gradient(to left, #317af7, #317af7) left bottom no-repeat,
+		linear-gradient(to bottom, #317af7, #317af7) left bottom no-repeat,
+		linear-gradient(to left, #317af7, #317af7) right bottom no-repeat,
+		linear-gradient(to left, #317af7, #317af7) right bottom no-repeat;
+	background-size: var(--bg-bd-wd) var(--bg-bd-ht),
+		var(--bg-bd-ht) var(--bg-bd-wd), var(--bg-bd-wd) var(--bg-bd-ht),
+		var(--bg-bd-ht) var(--bg-bd-wd);
+	font-size: calc(var(--screen-font-size) + 10px);
+	font-weight: bold;
+}
+
+/* =========== 视频列表底层 =========== */
+
+.video-list-wrap .video-list {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	row-gap: 1rem;
+	transition: all 0.5s ease;
+}
+
+.video-list .video-item {
+	width: calc(25% - 0.5rem);
+	height: fit-content;
+	border-bottom-left-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+
+	background-color: rgba(255, 255, 255, 1);
+	transition: all 0.2s ease;
+}
+
+/*================== video item hover style ============================*/
+
+.video-list .video-item:hover {
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.video-list .video-item:hover {
+	transform: scale(1.2);
+	z-index: 999;
+}
+
+.video-list .video-item:hover img.video-cover {
+	max-width: 150%;
+	max-height: 150%;
+}
+
+/*========================================================================*/
+
+@media screen and (max-width: 600px) {
+	:root {
+		--screen-font-size: 10px;
+	}
+	.video-list .video-item {
+		width: calc(50% - 0.5rem);
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px) {
+	:root {
+		--screen-font-size: 11px;
+	}
+	.video-list .video-item {
+		width: calc(33.3% - 0.5rem);
+	}
+	.video-list .video-item:last-child:nth-child(3n-1) {
+		margin-right: calc(33.3% + 0.25rem);
+	}
+}
+
+@media screen and (min-width: 960px) and (max-width: 1280px) {
+	:root {
+		--screen-font-size: 12px;
+	}
+	.video-list .video-item {
+		width: calc(25% - 0.5rem);
+	}
+	.video-list .video-item:last-child:nth-child(4n-2) {
+		margin-right: calc(50% + 0.25rem);
+	}
+	.video-list .video-item:last-child:nth-child(4n-1) {
+		margin-right: calc(25% + 0.25rem);
+	}
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1560px) {
+	:root {
+		--screen-font-size: 13px;
+	}
+	.video-list .video-item {
+		width: calc(20% - 0.5rem);
+	}
+	.video-list .video-item:last-child:nth-child(5n-3) {
+		margin-right: calc(60% + 0.25rem);
+	}
+	.video-list .video-item:last-child:nth-child(5n-2) {
+		margin-right: calc(40% + 0.25rem);
+	}
+	.video-list .video-item:last-child:nth-child(5n-1) {
+		margin-right: calc(20%);
+	}
+}
+
+@media screen and (min-width: 1560px) {
+	:root {
+		--screen-font-size: 13px;
+	}
+	.video-list .video-item {
+		width: calc(16.7% - 0.5rem);
+	}
+	.video-list .video-item:last-child:nth-child(6n-4) {
+		margin-right: calc(67%);
+	}
+	.video-list .video-item:last-child:nth-child(6n-3) {
+		margin-right: calc(50% + 0.25rem);
+	}
+	.video-list .video-item:last-child:nth-child(6n-2) {
+		margin-right: calc(34% - 0.5rem);
+	}
+	.video-list .video-item:last-child:nth-child(6n-1) {
+		margin-right: calc(17% - 0.25rem);
+	}
+}
+
+/* =========== video item 封面部分 =========== */
+
+.video-list .video-item .video-cover-wrap {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding-bottom: 62.5%;
+	background-color: rgb(0, 0, 0);
+	overflow: hidden;
+}
+
+img.video-cover {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 101%;
+	max-height: 101%;
+	transition: all 0.3s ease;
+}
+
+/* =========== 气泡信息 =========== */
+.video-list .video-item .video-cover-wrap .video-bubble-info {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	padding: 0.25em;
+	color: #fff;
+	font-size: calc(var(--screen-font-size) - 1px);
+	display: flex;
+	flex-flow: row wrap;
+	column-gap: 0.5em;
+	justify-content: space-between;
+}
+
+.video-list .video-item .video-cover-wrap .video-bubble-info .bubble-item {
+	padding: 0em 0.5em;
+	background-color: rgba(138, 138, 138, 0.4);
+	backdrop-filter: blur(2px);
+	border-radius: 0.6em;
+}
+
+/* =========== 视频相关信息 =========== */
+.video-list .video-item .video-info-wrap {
+	padding: 5px;
+	transition: all 0.3s ease;
+	overflow: hidden;
+}
+
+.video-list .video-item .video-info-wrap .video-title {
+	display: block;
+	font-size: calc(var(--screen-font-size) + 3px);
+	font-weight: bold;
+	white-space: nowrap; /* 禁止换行 */
+	overflow: hidden; /* 超出部分隐藏 */
+	text-overflow: ellipsis; /* 显示省略号 */
+}
+
+.video-list .video-item .video-info-wrap .video-detail {
+	font-size: var(--screen-font-size);
+	display: flex;
+	flex-flow: row wrap;
+	column-gap: 0.5em;
+	color: #666;
+}
+
+.video-list .video-item .video-info-wrap .video-detail .detail-item {
+	display: inline-block;
+}
+
+.video-list .video-item .video-info-wrap .video-detail .detail-item:last-child {
+	margin-left: auto;
+}
+
+.video-list .video-item .video-info-wrap .video-tag-list {
+	display: flex;
+	flex-flow: row wrap;
+	column-gap: 0.5em;
+	row-gap: 3px;
+	font-size: var(--screen-font-size);
+}
