@@ -61,7 +61,7 @@ body {
 	padding: 0.25em 0.2em;
 }
 
-.side-btn-wrap .btn-list-wrap .btn {
+.side-btn-wrap .btn-list-wrap .btn-item {
 	position: relative;
 	text-align: center;
 	vertical-align: middle;
@@ -72,7 +72,7 @@ body {
 }
 
 /* 设置次级按钮列表 */
-.side-btn-wrap .btn .btn-sub-wrap {
+.side-btn-wrap .btn-item .btn-sub-wrap {
 	display: none;
 	position: absolute;
 	right: calc(100%);
@@ -86,7 +86,7 @@ body {
 }
 
 /* 设置与父按钮平滑连接区域，防止丢失hover */
-.side-btn-wrap .btn .btn-sub-wrap::before {
+.side-btn-wrap .btn-item .btn-sub-wrap::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -95,12 +95,12 @@ body {
 	height: 100%;
 }
 
-.side-btn-wrap .btn:hover {
+.side-btn-wrap .btn-item:hover {
 	color: #005eff;
 	background-color: rgba(0, 0, 0, 0.2);
 }
 
-.side-btn-wrap .btn:hover > .btn-sub-wrap {
+.side-btn-wrap .btn-item:hover > .btn-sub-wrap {
 	display: flex;
 	color: #000;
 	animation: hide2show 0.5s ease 0s backwards;
