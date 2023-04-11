@@ -1,0 +1,117 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	font-family: "HarmonyOSHans", "PingFang SC", "HarmonyOS Sans Regular",
+		Helvetica Neue, Microsoft YaHei, sans-serif;
+	background-color: var(--light-bg-color);
+}
+
+a {
+	font-style: unset;
+	text-decoration: none;
+}
+
+input,
+button {
+	border: none;
+	outline: none;
+}
+:root {
+	--light-bg-color: #F1F3F5;
+	--light-blue-color: #0A59F7
+}
+
+/*================================== main css ==================================*/
+
+.container {
+	min-height: 200vh;
+}
+
+:root {
+	--side-nav-ftsz: 18px;
+	--side-nav-wth: 140px;
+}
+
+.side-nav-wrap {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: var(--side-nav-wth);
+	padding: 0.25em;
+	background-color: #ddd;
+	transition: all 0.3s ease;
+	overflow: hidden;
+	z-index: 999;
+
+	animation: hide2show 0.3s ease 0s backwards;
+
+	padding-top: 2.5em;
+}
+
+#toggle-side-nav-btn {
+	position: fixed;
+	font-size: 20px;
+	left: 32px;
+	bottom: 32px;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	border-radius: 0.25em;
+	background-color: rgba(129, 129, 129, 0.3);
+	backdrop-filter: blur(5px);
+	display: none;
+	z-index: 1000;
+	cursor: pointer;
+}
+
+.side-nav-wrap .side-nav-list {
+	display: flex;
+	flex-flow: column wrap;
+	font-size: var(--side-nav-ftsz);
+	gap: 5px;
+}
+
+.side-nav-wrap .side-nav-list .nav-item {
+	display: flex;
+	align-items: center;
+	height: 2em;
+	cursor: pointer;
+	border-radius: 0.5em;
+	transition: all 0.3s ease;
+}
+
+.side-nav-wrap .side-nav-list .nav-item span {
+	padding: 0 0.5em;
+}
+
+.side-nav-wrap .side-nav-list .nav-item:hover,
+.side-nav-wrap .side-nav-list .nav-item.active {
+	background-color: var(--light-bg-color);
+	color: var(--light-blue-color);
+}
+
+
+
+@media screen and (max-width: 640px) {
+	:root {
+		--side-nav-ftsz: 14px;
+		--side-nav-wth: 0px;
+	}
+	.side-nav-wrap {
+		width: auto;
+		display: none;
+	}
+	.side-nav-wrap.show {
+		display: block;
+	}
+	#toggle-side-nav-btn {
+		display: inline-block;
+	}
+}

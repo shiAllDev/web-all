@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIDE NAV 侧边导航栏</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../keyframes.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- 控制侧边导航栏 显示/隐藏 -->
+        <div id="toggle-side-nav-btn" class="fa fa-reorder"></div>
+        <div class="side-nav-wrap">
+            <div id="toggle-side-nav-icon-btn" class="fa fa-reorder"></div>
+            <div class="side-nav-list icon-nav-list">
+                <a class="nav-item active" data-id="sub_nav_id"><i class="fa fa-home"></i><span>home</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><i class="fa fa-cog"></i><span>manager</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><i class="fa fa-envelope"></i><span>email</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><i class="fa fa-bell"></i><span>bell</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><i class="fa fa-cloud"></i><span>cloud</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><i class="fa fa-database"></i><span>database</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><i class="fa fa-user"></i><span>profile</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><i class="fa fa-github"></i><span>github</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><i class="fa fa-twitter"></i><span>twitter</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><i class="fa fa-telegram"></i><span>telegram</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><i class="fa fa-instagram"></i><span>instagram long long</span></a>
+            </div>
+        </div>
+        <div class="side-nav-wrap" style="right: 0px; left: unset;">
+            <div class="wrap-header">
+            </div>
+            <div class="side-nav-list">
+                <a class="nav-item active" data-id="sub_nav_id"><span>home</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>manager</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>email</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>bell</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>cloud</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>database</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>profile</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>github</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>twitter</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>telegram</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>instagram long long</span></a>
+            </div>
+        </div>
+        <!-- 使用说明 -->
+        <main>
+            <h2>使用说明</h2>
+            <ul>
+                <li>
+                    <p><code>#toggle-side-nav-btn</code></p>
+                    <p>控制侧边导航栏 显示/隐藏 按钮：</p>
+                    <p>该按钮固定在页面的左下角，可自定义设置</p>
+                    <p>当页面小于<code>640px</code>(可以自定义设置)时，自动隐藏侧边导航栏，并且会显示该按钮</p>
+                    <p>通过为 <code>.side-nav-wrap</code> 添加类<code>show</code>控制显示</p>
+                </li>
+                <li>
+                    <p><code>#toggle-side-nav-icon-btn</code></p>
+                    <p>控制带有icon的侧边导航栏缩进，即隐藏文本</p>
+                    <p>该按钮固定在侧边导航栏的右上角，可自由自定义设置</p>
+                    <p>通过为<code>.side-nav-wrap</code>添加<code>icon</code>类控制文本显示或隐藏</p>
+                </li>
+                <li>
+                    <p>对于每个侧边导航栏 条目，其构成主要为<code>a</code> 标签，子元素或许包含<code>icon</code>，但是<code>side-nav-list</code>必须同时拥有<code>icon-nav-list</code>类</p>
+                    <p>通过设置每个<code>nav-item</code>的<code>data-id</code>属性来选择当前导航条目</p>
+                </li>
+            </ul>
+        </main>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
