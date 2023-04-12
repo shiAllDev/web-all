@@ -80,16 +80,10 @@ button {
 
 .side-nav-wrap.icon {
 	width: calc(2.5 * var(--side-nav-ftsz));
-	/* --new-sub-nav-wdh: calc(2.5 * var(--side-nav-ftsz)); */
-}
-
-.side-nav-wrap.icon:root {
-	--side-nav-wth: calc(2.5 * var(--side-nav-ftsz));
 }
 
 .side-nav-wrap.icon ~ main {
-	/* margin-left: calc(2.5 * var(--side-nav-ftsz)); */
-	margin-left: var(--side-nav-wth);
+	margin-left: calc(2.5 * var(--side-nav-ftsz));
 }
 
 .side-nav-wrap.icon .side-nav-list span {
