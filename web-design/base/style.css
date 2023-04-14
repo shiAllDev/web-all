@@ -23,7 +23,21 @@ button {
 }
 :root {
 	--light-bg-color: #F1F3F5;
-	--light-blue-color: #0A59F7
+	--light-blue-color: #0A59F7;
+	--side-nav-ftsz: 18px;
+	--side-nav-wth: 140px;
+	--top-navbar-ht: 60px;
+	--topnav-search-input-wd: 15em;
+}
+
+code {
+	display: inline-block;
+	padding: 2px 0.25em;
+	margin: 0 2px;
+	background-color: #333;
+	color: #fff;
+	font-family: consolas;
+	border-radius: 4px;
 }
 
 /*================================== main css ==================================*/

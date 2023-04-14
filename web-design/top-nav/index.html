@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../side-nav/style.css">
+    <link rel="stylesheet" href="../keyframes.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="top-navbar scrollhide">
+            <div class="navbar-brand">MY WEB</div>
+            <button id="top-navbar-toggle"><i class="fa fa-reorder"></i></button>
+            <div class="navbar-nav-wrap">
+                <div class="nav-list">
+                    <div class="nav-item active"><a>导航1</a></div>
+                    <div class="nav-item"><a>导航2</a></div>
+                    <div class="nav-item"><a>导航3</a></div>
+                    <div class="nav-item sub-nav-wrap">
+                        <a>折叠导航</a>
+                        <div class="dropdown-nav-list">
+                            <a href="" class="nav-item">下拉导航1</a>
+                            <a href="" class="nav-item">下拉导航导航2</a>
+                            <a href="" class="nav-item">下拉导航</a>
+                        </div>
+                    </div>
+                    <div class="nav-item"><a>导航5</a></div>
+                </div>
+            </div>
+            <form class="nav-search-form" target="_blank" action="/search">
+                <input class="nav-search-input" type="search" placeholder="start to search:)">
+                <button class="nav-search-button fa fa-search" type="submit"></button>
+            </form>
+        </nav>
+        <div id="toggle-side-nav-btn" class="fa fa-reorder"></div>
+        <!-- show2pane控制是否显示为panel形式 -->
+        <div class="side-nav-wrap scrollhide">
+            <div class="wrap-header">
+            </div>
+            <div class="side-nav-list">
+                <a class="nav-item active" data-id="sub_nav_id"><span>home</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>manager</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>email</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>bell</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>cloud</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>database</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>profile</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>github</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>twitter</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>twitter</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>twitter</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>twitter</span></a>
+                <a class="nav-item" data-id="sub_nav_id"><span>instagram long long</span></a>
+            </div>
+        </div>
+        <main>
+            <div class="content">
+                <h3>使用说明</h3>
+                <p>1.
+                    导航栏<code>top-navbar</code>由四部分组成：<br>
+                    <code>.navbar-brand</code><br>
+                    <code>#top-navbar-toggle</code><br>
+                    <code>.navbar-nav-wrap</code><br>
+                    <code>.nav-search-form</code>
+                </p>
+                <p>2. <code>.navbar-brand</code>
+                <p>该部分展示网站图标</p>
+                </p>
+                <p>3.<code>#top-navbar-toggle</code>
+                <p> 该部分在屏幕宽度小于<code>640px</code>时显示 </p>
+                <p>用来显示该顶部导航栏，通过添加类<code>show</code></p>
+                </p>
+                <p>4.<code>.navbar-nav-wrap</code>
+                <p>该部分为导航栏的导航项的主要内容</p>
+                <p>如果导航栏含有二级导航，则在<code>.nav-item</code>中添加类<code>sub-nav-wrap</code>，并且二级导航栏的父类为<code>.dropdown-nav-list</code>
+                </p>
+                </p>
+                <p>5.<code>.nav-search-form</code>
+                <p>该部分为导航栏的搜索框</p>
+                </p>
+                <p>6.滚动时为导航栏添加/删除类<code>transparent</code>
+                <p>向上滚动显示导航栏，即删除类</p>
+                <p>向下滚动时隐藏导航栏，即添加类</p>
+                <p>鼠标移动到导航栏时显示导航栏</p>
+                </p>
+                <p>7. 鼠标放入或者搜索框中含有内容，则展开搜索框，否则隐藏搜索框</p>
+            </div>
+        </main>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

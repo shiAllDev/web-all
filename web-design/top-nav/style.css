@@ -1,0 +1,305 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	font-family: "HarmonyOSHans", "PingFang SC", "HarmonyOS Sans Regular",
+		Helvetica Neue, Microsoft YaHei, sans-serif;
+	background-color: var(--light-bg-color);
+	background: url(https://images7.alphacoders.com/340/340542.jpg) center
+		center/cover no-repeat;
+}
+
+a {
+	font-style: unset;
+	text-decoration: none;
+}
+
+input,
+button {
+	border: none;
+	outline: none;
+}
+:root {
+	--font-family: "HarmonyOSHans", "PingFang SC", "HarmonyOS Sans Regular",
+		Helvetica Neue, Microsoft YaHei, sans-serif;
+	--light-bg-color: #f1f3f5;
+	--light-blue-color: #0a59f7;
+	--side-nav-ftsz: 18px;
+	--side-nav-wth: 140px;
+}
+
+code {
+	display: inline-block;
+	padding: 2px 0.25em;
+	margin: 0 2px;
+	background-color: #333;
+	color: #fff;
+	font-family: consolas;
+	border-radius: 4px;
+}
+
+/*================================== main css ==================================*/
+
+:root {
+	--top-navbar-ht: 60px;
+	--topnav-search-input-wd: 15em;
+}
+
+/* 鼠标滚动透明 */
+.scrollhide.transparent {
+	opacity: 0;
+}
+
+.scrollhide.transparent:hover {
+	opacity: 1;
+}
+
+/* 顶部导航栏 */
+.top-navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: var(--top-navbar-ht);
+	min-height: var(--top-navbar-ht);
+	padding: 0 1.5rem 0.5rem 0;
+	gap: 0.5rem;
+
+	display: flex;
+	align-items: center;
+	background-color: #fff8;
+	backdrop-filter: blur(5px);
+	z-index: 1000;
+	transition: all 0.3s;
+}
+
+/* 网站图标等 */
+.top-navbar .navbar-brand {
+	height: calc(var(--top-navbar-ht) - 0.5rem);
+	padding: 0 1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+	font-weight: bold;
+	flex: none;
+}
+
+/* 控制顶部导航栏展开或折叠 */
+.top-navbar #top-navbar-toggle {
+	position: absolute;
+	display: none;
+	top: 1rem;
+	right: 2rem;
+	background-color: transparent;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+/* 导航栏导航列表 */
+.top-navbar .navbar-nav-wrap .nav-list {
+	display: flex;
+	gap: 0.5em;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.top-navbar .navbar-nav-wrap .nav-list .nav-item {
+	position: relative;
+	display: block;
+	padding: 0 0.5em;
+
+	color: #000;
+	cursor: pointer;
+	flex-shrink: 0;
+	transition: all 0.2s ease;
+}
+
+.top-navbar .navbar-nav-wrap .nav-list .nav-item.active,
+.top-navbar .navbar-nav-wrap .nav-list .nav-item:hover {
+	color: var(--light-blue-color);
+}
+
+/* 二级级导航列表 */
+.nav-item.sub-nav-wrap::after {
+	position: absolute;
+	content: '';
+	top: 50%;
+	margin-left: 3px;
+	transform: translateY(-50%);
+	border-top: .3em solid;
+	border-right: .3em solid transparent;
+	border-bottom: 0;
+	border-left: .3em solid transparent;
+}
+
+.nav-item.sub-nav-wrap .dropdown-nav-list {
+	display: none;
+	position: absolute;
+	top: calc(100% + 0.75rem);
+	left: 50%;
+	transform: translateX(-50%);
+	width: max-content;
+	padding: 0.5rem 1rem;
+	gap: 0.5rem;
+	flex-flow: column wrap;
+
+	background: #ffffff;
+	border-radius: 0.5rem;
+
+	filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.15));
+	animation: hide2show 0.5s ease 0s backwards;
+	z-index: 999;
+}
+
+.nav-item.sub-nav-wrap:hover .dropdown-nav-list {
+	display: flex;
+}
+
+.nav-item.sub-nav-wrap .dropdown-nav-list::before {
+	position: absolute;
+	content: "";
+	top: -1.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 0.75rem solid transparent;
+	border-bottom-color: #fff;
+}
+
+/* 导航栏搜索框 */
+.top-navbar .nav-search-form {
+	position: relative;
+	display: inline-flex;
+	margin-left: auto;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 1rem;
+	backdrop-filter: blur(5px);
+	transition: all 0.2s ease;
+}
+
+.top-navbar .nav-search-form .nav-search-input {
+	outline: none;
+	width: 0;
+	height: 2.2rem;
+	font-size: 16px;
+	padding: 0.5rem 0.75rem;
+	padding-right: 2rem;
+	background-color: transparent;
+	border-radius: 1rem;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2),
+		0 0 0 3px rgba(255, 255, 255, 0.5);
+	border: 1px solid transparent;
+	transition: all 0.2s ease;
+}
+
+.top-navbar .nav-search-form .nav-search-input,
+.top-navbar .nav-search-form .nav-search-input::-webkit-input-placeholder,
+.top-navbar .nav-search-form .nav-search-input::placeholder {
+	font-family: var(--font-family);
+}
+
+.top-navbar .nav-search-form:hover .nav-search-input,
+.top-navbar .nav-search-form .nav-search-input:not(:placeholder-shown),
+.top-navbar .nav-search-form .nav-search-input:focus {
+	width: var(--topnav-search-input-wd);
+	border-color: var(--light-blue-color);
+}
+.top-navbar
+	.nav-search-form
+	.nav-search-input:not(:placeholder-shown)
+	~ .nav-search-button,
+.top-navbar .nav-search-form .nav-search-input:focus ~ .nav-search-button {
+	color: var(--light-blue-color);
+}
+
+.top-navbar .nav-search-form .nav-search-button {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	padding-right: 0.75rem;
+	width: auto;
+	height: 100%;
+	background-color: transparent;
+	outline: none;
+	font-size: 1.3rem;
+	cursor: pointer;
+}
+
+/* 设置小屏幕样式 */
+@media screen and (max-width: 640px) {
+	:root {
+		--side-nav-wth: 0px;
+	}
+	.top-navbar #top-navbar-toggle {
+		display: block;
+	}
+
+	.top-navbar {
+		flex-direction: column;
+	}
+
+	.top-navbar .navbar-nav-wrap,
+	.top-navbar .nav-search-form {
+		display: none;
+	}
+
+	.top-navbar .nav-list {
+		flex-flow: column nowrap;
+	}
+
+	.top-navbar .nav-search-form {
+		margin: auto;
+	}
+
+	.top-navbar .nav-search-form .nav-search-input {
+		width: var(--topnav-search-input-wd);
+	}
+
+	.top-navbar {
+		transition: all 0.3s ease;
+		height: auto;
+	}
+
+	.top-navbar.show .navbar-nav-wrap,
+	.top-navbar.show .nav-search-form {
+		display: block;
+	}
+}
+
+.side-nav-wrap {
+	margin-top: var(--top-navbar-ht);
+}
+
+.side-nav-wrap.show2pane {
+	backdrop-filter: blur(5px);
+	transition: all 0.3s ease;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	max-height: calc(100vh - 2 * var(--top-navbar-ht));
+	border-bottom-right-radius: 1rem;
+	border-top-right-radius: 1rem;
+	top: 50%;
+	bottom: unset;
+	overflow: auto;
+	transform: translateY(calc(-50%));
+}
+
+main {
+	margin-top: var(--top-navbar-ht);
+	margin-right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content {
+	padding: 1rem;
+	font-size: 18px;
+	width: fit-content;
+	background-color: #f1f3f580;
+	backdrop-filter: blur(3px);
+}

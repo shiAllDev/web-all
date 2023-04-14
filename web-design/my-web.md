@@ -25,13 +25,13 @@
                 -   img.video-cover
                 -   video-bubble-info
                     -   bubble-item
-                        .to-right 固定在最右边
+                        `.to-right` 固定在最右边
             -   video-info-wrap
-                -   a.video-title
+                -   `a.video-title`
                 -   video-detail
                     -   detail-item
                     -   video-tag-list
-                        -   a.tag-item
+                        -   `a.tag-item`
 
 ### 侧边次级导航栏 side-nav
 
@@ -40,15 +40,30 @@
         -   a.nav-item
     -   toggle-side-nav-icon-btn
         控制 icon 文本显示/隐藏
-        为 side-nav-list 添加.icon
+        为 side-nav-list 添加`.icon`
 -   toggle-side-nav-btn
     控制 wrap 显示/隐藏
-    为 side-nav-wrap 添加.show
+    为 side-nav-wrap 添加`.show`
 
 ### bootstrap+nav 主导航栏
 
--   导航栏
--   搜索框
+-   导航栏 `top-navbar`
+    -   网站图标
+        `.navbar-brand`
+    -   显示全部顶部导航栏
+        `button#top-navbar-toggle`
+        当屏幕宽度小于`640px`时只显示网站图标
+    -   导航按钮列表
+        `.navbar-nav-wrap`
+        -   二级导航`.dropdown-nav-list`
+            父元素`.nav-item`添加`.sub-nav-wrap`
+    -   鼠标滚动导航栏显示/隐藏，导航栏添加`.scrollhide`类
+        -   鼠标向上滚动时，删除`.transparent`类
+        -   鼠标向下滚动时，添加`.transparent`类
+-   搜索框`.nav-search-form`
+    -   输入框`.nav-search-input`
+    -   搜索按钮`.nav-search-button`
+    -   鼠标放入 form 中或输入框中含有内容时，展开搜索框，否则折叠搜索框
 
 ### item 操作按钮 kit-box
 
