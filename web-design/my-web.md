@@ -67,10 +67,36 @@
 
 ### item 操作按钮 kit-box
 
--   固定方向
+-   默认为绝对定位，垂直方向
+-   垂直方向
+    属性`vertical:"true"`
 -   kit-item
 
 ### bootstrap+modal 模态框
+
+-   更改项
+    -   modal-header
+        -   更改内容：增加`.modal-control-wrap`项，包含多个按钮
+        -   button 的 font-weight 为 100
+        -   `padding: 0.5rem`
+    -   modal-body
+        -   `padding: 0`
+        -   modal-content 的 border 修改为 box-shadow
+    -   modal-dialog
+        -   `margin: 0.5rem auto`
+        -   `max-width: calc(100% - 1rem)`
+        -   `max-height: calc(100vh - 1rem)`
+        -   `min-height: calc(100% - 1rem)`
+-   modal-fluid
+    -   自适应 modal
+    -   modal-dialog: `width: fit-content; max-width: calc(100% - 1rem)`
+-   modal-fullscreen
+    -   全屏 modal
+    -   modal-dialog:
+        -   `width: 100%; max-width: calc(100% - 1rem)`
+        -   modal-content: `height: 100%`
+    -   通过按钮`button.mdbtn-toggle-fullscreen`来进行控制
+        为祖先元素类`.modal`添加`.modal-fullscreen`
 
 ### bootstrap+pagination 分页
 

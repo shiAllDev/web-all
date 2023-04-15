@@ -1,0 +1,57 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	font-family: "HarmonyOSHans", "PingFang SC", "HarmonyOS Sans Regular",
+		Helvetica Neue, Microsoft YaHei, sans-serif;
+	background-color: var(--light-bg-color);
+}
+
+a {
+	font-style: unset;
+	text-decoration: none;
+}
+
+input,
+button {
+	border: none;
+	outline: none;
+}
+:root {
+	--light-bg-color: #F1F3F5;
+	--light-blue-color: #0A59F7;
+	--side-nav-ftsz: 18px;
+	--side-nav-wth: 140px;
+	--top-navbar-ht: 60px;
+	--topnav-search-input-wd: 15em;
+}
+
+code {
+	display: inline-block;
+	padding: 2px 0.25em;
+	margin: 0 2px;
+	background-color: #333;
+	color: #fff;
+	font-family: consolas;
+	border-radius: 4px;
+}
+
+/*================================== main css ==================================*/
+
+.modal-fluid .modal-dialog {
+	width: fit-content;
+	max-width: calc(100% - 1rem);
+}
+
+.modal-fullscreen .modal-dialog {
+	max-width: calc(100% - 1rem);
+	width: 100%;
+}
+
+.modal-fullscreen .modal-dialog .modal-content {
+	height: 100%;
+}

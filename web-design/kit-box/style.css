@@ -1,0 +1,112 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	font-family: "HarmonyOSHans", "PingFang SC", "HarmonyOS Sans Regular",
+		Helvetica Neue, Microsoft YaHei, sans-serif;
+	background-color: var(--light-bg-color);
+}
+
+a {
+	font-style: unset;
+	text-decoration: none;
+}
+
+input,
+button {
+	border: none;
+	outline: none;
+}
+:root {
+	--light-bg-color: #F1F3F5;
+	--light-blue-color: #0A59F7;
+	--side-nav-ftsz: 18px;
+	--side-nav-wth: 140px;
+	--top-navbar-ht: 60px;
+	--topnav-search-input-wd: 15em;
+}
+
+code {
+	display: inline-block;
+	padding: 2px 0.25em;
+	margin: 0 2px;
+	background-color: #333;
+	color: #fff;
+	font-family: consolas;
+	border-radius: 4px;
+}
+
+/*================================== main css ==================================*/
+
+.container-fluid {
+	height: 100vh;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 1rem;
+	flex-flow: row wrap;
+}
+
+.box {
+	position: relative;
+	width: 420px;
+	height: 280px;
+	background-color: #0007;
+}
+
+.box:nth-child(1) {
+	background: url(https://images.alphacoders.com/131/1310342.jpg) center center / cover no-repeat;
+}
+.box:nth-child(2) {
+	background: url(https://images.alphacoders.com/131/1310687.jpeg) center center / cover no-repeat;
+}
+.box:nth-child(3) {
+	background: url(https://images3.alphacoders.com/131/1310701.jpg) center center / cover no-repeat;
+}
+.box:nth-child(4) {
+	background: url(https://images3.alphacoders.com/130/1309917.jpg) center center / cover no-repeat;
+}
+
+.kit-box-wrap {
+	position: absolute;
+	top: 0;
+	right: 0;
+	max-width: 100%;
+	max-height: 100%;
+	padding: 0.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	justify-content: right;
+	font-size: 20px;
+	flex-shrink: 0;
+}
+
+.kit-box-wrap[vertical=true] {
+	flex-flow: column wrap-reverse;
+}
+
+.kit-box-wrap .kit-item {
+	width: 1.5em;
+	height: 1.5em;
+	padding: 0.25em 0.25em;
+	border-radius: 0.25em;
+	text-align: center;
+	vertical-align: center;
+	background-color: var(--light-bg-color);
+	box-shadow: 0 0 2px #fff, 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+	opacity: 0.5;
+	transition: all .2s;
+	cursor: pointer;
+	user-select: none;
+}
+
+.kit-box-wrap .kit-item:hover {
+	transform: translateY(3px);
+	color: var(--light-blue-color);
+	opacity: 1;
+}
