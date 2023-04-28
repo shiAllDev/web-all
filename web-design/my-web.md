@@ -98,6 +98,56 @@
     -   通过按钮`button.mdbtn-toggle-fullscreen`来进行控制
         为祖先元素类`.modal`添加`.modal-fullscreen`
 
+### bootstrap+form+tag
+
+-   form 样式
+    -   修改 input、label 等的 font-size、padding 和 margin
+    -   删除.btn 的 font-size
+    -   删除.form-control focus 情况下的 box-shadow
+-   video-info-wrap
+    -   video-info-form
+        -   视频相关信息，并集成 tag 列表
+    -   video-cover-manage-wrap
+        -   video-cover-wrap
+        -   上传本地视频封面
+        -   通过爬虫或者网络图片地址进行下载图片等相关信息
+    -   tag 标签操作
+-   tag 标签操作
+    -   tag-input-wrap
+        -   tag-list#tg-input-{tag name}
+            -   tag-item
+                -   span(tag title)
+                -   .rm-tag
+                    -   onclick=unselectTag(this) 取消选择
+                    -   data-aim=#tg-list-{tag name}
+                    -   data-name={tag name}
+    -   tag-list-wrap
+        -   tag-list-header
+            -   list-title(onclic=toggleAncestorClass(this, 'fold', 2))
+            -   tag-filter-wrap
+                -   input
+                    根据输入进行删除
+                -   button
+                    进行添加 tag
+                    -   onclick=addTag(tag_name)
+        -   tag-list
+            -   同时含有.show-add 为 tag-item 添加含+伪类
+            -   tag-item
+                -   onclick=selectTag(this)
+                -   data-aim=#tg-input-{tag name}
+                -   data-name={tag name}
+                -   select=true 不可以进行添加操作
+        -   .fold 类，存在则进行折叠，只显示 header
+    -   select/unselect tag
+        选择或不选择标签，将会将标签添加/删除于 tg-input-tag_name 中，tg-list-tag_name 将会激活/禁用 tag
+
+### video player modal
+
+-   play video
+-   related video
+-   operate video
+-   screenshoots
+
 ### bootstrap+pagination 分页
 
 -   分页按钮

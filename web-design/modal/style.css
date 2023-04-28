@@ -22,8 +22,8 @@ button {
 	outline: none;
 }
 :root {
-	--light-bg-color: #F1F3F5;
-	--light-blue-color: #0A59F7;
+	--light-bg-color: #f1f3f5;
+	--light-blue-color: #0a59f7;
 	--side-nav-ftsz: 18px;
 	--side-nav-wth: 140px;
 	--top-navbar-ht: 60px;

@@ -199,7 +199,7 @@ button {
 
 /* =========== video item 封面部分 =========== */
 
-.video-list .video-item .video-cover-wrap {
+.video-cover-wrap {
 	position: relative;
 	display: block;
 	width: 100%;

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TITLE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../lib/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="../modal/style.css" />
+    <link rel="stylesheet" href="../keyframes.css" />
+    <link rel="stylesheet" href="../fluid-video-list/style.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="modal fade" id="video-info-modal" data-keyboard="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">video info modal</h5>
+                    <div class="modal-control-wrap">
+                        <button type="button" class="fa fa-minus"></button>
+                        <button type="button" class="fa fa-window-maximize mdbtn-toggle-fullscreen"></button>
+                        <button type="button" class="fa fa-close" data-dismiss="modal"></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="video-info-wrap">
+                        <form class="needs-validation mini-form video-info-form" novalidate>
+                            <div class="form-group">
+                                <label for="">ID</label>
+                                <input class="form-control" value="video id" type="text" name="id"
+                                    placeholder="video id:)" />
+                            </div>
+                            <div class="form-group">
+                                <label for="">视频名称</label>
+                                <input class="form-control" type="text" name="name" placeholder="video name:)" />
+                            </div>
+                            <div class="form-group">
+                                <label for="">视频类型：</label>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" value="0" id="category-0" name="category"
+                                        class="custom-control-input" checked />
+                                    <label class="custom-control-label" for="category-0">custom radio</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" value="1" id="category-1" name="category"
+                                        class="custom-control-input" />
+                                    <label class="custom-control-label" for="category-1">custom radio</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" value="2" id="category-2" name="category"
+                                        class="custom-control-input" />
+                                    <label class="custom-control-label" for="category-2">custom radio</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" value="2" id="category-2" name="category"
+                                        class="custom-control-input" />
+                                    <label class="custom-control-label" for="category-2">custom radio</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">视频地址</label>
+                                <input class="form-control" type="text" name="path" placeholder="视频地址:)" />
+                            </div>
+                            <div class="form-group">
+                                <label for="">视频标签列表</label>
+                                <input class="form-control" type="text" name="tag" hidden />
+                                <div class="tag-input-wrap">
+                                    <div class="tag-list" id="tg-input-tag">
+                                        <div class="tag-item" data-value="1">
+                                            <span>标签一</span><span class="rm-tag" onclick="unselectTag(this)"
+                                                data-aim="#tg-list-tag" data-name="tag">&times;</span>
+                                        </div>
+                                        <div class="tag-item" data-value="2">
+                                            <span>标签二</span><span class="rm-tag" onclick="unselectTag(this)"
+                                                data-aim="#tg-list-tag" data-name="tag">&times;</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tag-list-wrap fold">
+                                    <div class="tag-list-header">
+                                        <span class="list-title" onclick="toggleAncestorClass(this, 'fold', 2)">tag title
+                                            标签标题</span>
+                                        <div class="tag-filter-wrap">
+                                            <input type="search" name="filter" placeholder="请输入标签" /><button
+                                                type="button" onclick="addTag('tag')">
+                                                添加
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="tag-list show-add" id="tg-list-tag">
+                                        <div class="tag-item" onclick="selectTag(this)" data-aim="#tg-input-tag"
+                                            data-name="tag" data-value="1" selected="true">
+                                            <span>标签一</span>
+                                        </div>
+                                        <div class="tag-item" onclick="selectTag(this)" data-aim="#tg-input-tag"
+                                            data-name="tag" data-value="2" selected="true">
+                                            <span>标签二</span>
+                                        </div>
+                                        <div class="tag-item" onclick="selectTag(this)" data-aim="#tg-input-tag"
+                                            data-name="tag" data-value="3">
+                                            <span>标签三</span>
+                                        </div>
+                                        <div class="tag-item" onclick="selectTag(this)" data-aim="#tg-input-tag"
+                                            data-name="tag" data-value="4">
+                                            <span>标签四</span>
+                                        </div>
+                                        <div class="tag-item" onclick="selectTag(this)" data-aim="#tg-input-tag"
+                                            data-name="tag" data-value="5">
+                                            <span>标签五</span>
+                                        </div>
+                                        <div class="tag-item" onclick="selectTag(this)" data-aim="#tg-input-tag"
+                                            data-name="tag" data-value="6">
+                                            <span>标签六</span>
+                                        </div>
+                                        <div class="tag-item" onclick="selectTag(this)" data-aim="#tg-input-tag"
+                                            data-name="tag" data-value="7">
+                                            <span>tag_7</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">演员列表</label>
+                                <input class="form-control" type="text" name="actor" hidden />
+                                <div class="tag-input-wrap">
+                                    <div class="tag-list" id="tg-input-actor">
+                                        <div class="tag-item" data-value="1">
+                                            <span>标签一</span><span class="rm-tag" onclick="unselectTag(this)"
+                                                data-aim="#tg-list-actor" data-name="actor">&times;</span>
+                                        </div>
+                                        <div class="tag-item" data-value="2">
+                                            <span>标签二</span><span class="rm-tag" onclick="unselectTag(this)"
+                                                data-aim="#tg-list-actor" data-name="actor">&times;</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tag-list-wrap fold">
+                                    <div class="tag-list-header">
+                                        <span class="list-title" onclick="toggleAncestorClass(this, 'fold', 2)">tag title
+                                            标签标题</span>
+                                        <div class="tag-filter-wrap">
+                                            <input type="search" name="filter" placeholder="请输入标签" /><button
+                                                type="button" onclick="addTag('tag')">
+                                                添加
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="tag-list show-add" id="tg-list-actor">
+                                        <div class="tag-item" onclick="selectTag(this)" data-aim="#tg-input-actor"
+                                            data-name="actor" data-value="1" selected="true">
+                                            <span>标签一</span>
+                                        </div>
+                                        <div class="tag-item" onclick="selectTag(this)" data-aim="#tg-input-actor"
+                                            data-name="actor" data-value="2" selected="true">
+                                            <span>标签二</span>
+                                        </div>
+                                        <div class="tag-item" onclick="selectTag(this)" data-aim="#tg-input-actor"
+                                            data-name="actor" data-value="3">
+                                            <span>标签三</span>
+                                        </div>
+                                        <div class="tag-item" onclick="selectTag(this)" data-aim="#tg-input-actor"
+                                            data-name="actor" data-value="4">
+                                            <span>标签四</span>
+                                        </div>
+                                        <div class="tag-item" onclick="selectTag(this)" data-aim="#tg-input-actor"
+                                            data-name="actor" data-value="5">
+                                            <span>标签五</span>
+                                        </div>
+                                        <div class="tag-item" onclick="selectTag(this)" data-aim="#tg-input-actor"
+                                            data-name="actor" data-value="6">
+                                            <span>标签六</span>
+                                        </div>
+                                        <div class="tag-item" onclick="selectTag(this)" data-aim="#tg-input-actor"
+                                            data-name="actor" data-value="7">
+                                            <span>tag_7</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-primary" onclick="videoinfoEditSubmit()">
+                                    提交
+                                </button>
+                                <button type="reset" class="btn btn-primary" onclick="resetVideoForm()">
+                                    重置
+                                </button>
+                                <button type="submit" class="btn btn-primary" onclick="videoEditZoom(-1)">
+                                    上一个
+                                </button>
+                                <button type="submit" class="btn btn-primary" onclick="videoEditZoom(1)">
+                                    下一个
+                                </button>
+                            </div>
+                        </form>
+                        <div class="video-cover-manage-wrap">
+                            <span class="wrap-title">视频封面</span>
+                            <div class="video-cover-container">
+                                <div class="video-cover-wrap">
+                                    <img src="https://images5.alphacoders.com/349/349578.jpg" alt=""
+                                        class="video-cover" />
+                                </div>
+                            </div>
+                            <div class="input-group mb-2">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="localFile" name="cover_local" />
+                                    <label class="custom-file-label" for="localFile">选择本地文件</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button" onclick="uploadLocalCover()">
+                                        上传封面
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <select class="custom-select br-0" id="spider-base-url">
+                                        <option value="https://www.seejav.pw/?javbus">
+                                            基网址
+                                        </option>
+                                        <option value="web?web">
+                                            网络地址
+                                        </option>
+                                    </select>
+                                </div>
+                                <input type="text" class="form-control col-auto" id="spider-title"
+                                    placeholder="输入标题或网络地址" />
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button" onclick="spiderCover()">
+                                        爬取封面
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-md">
+        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#video-info-modal">
+            video info form modal
+        </button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="../lib/bootstrap/bootstrap.js"></script>
+    <script src="../modal/main.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

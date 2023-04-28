@@ -6,3 +6,15 @@
 		opacity: 1;
 	}
 }
+
+@keyframes jump {
+  0% {
+    transform: translateY(0.25em);
+  }
+  50% {
+    transform: translateY(-0.25em);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
