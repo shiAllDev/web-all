@@ -5075,21 +5075,16 @@ input[type="button"].btn-block {
 
 .page-link {
   position: relative;
-  display: block;
-  padding: 0.5rem 0.75rem;
-  margin-left: -1px;
-  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.5rem;
+  min-width: 2rem;
   color: #0a59f7;
+  border-radius: 0.3rem;
   background-color: #fff;
-  border: 1px solid #dee2e6;
-}
-
-.page-link:hover {
-  z-index: 2;
-  color: #0056b3;
-  text-decoration: none;
-  background-color: #e9ecef;
-  border-color: #dee2e6;
+	transition: all .2s ease;
+  user-select: none;
 }
 
 .page-link:focus {
@@ -5098,22 +5093,12 @@ input[type="button"].btn-block {
   box-shadow: 0 0 2px 1px rgba(0, 123, 255, 0.25);
 }
 
-.page-item:first-child .page-link {
-  margin-left: 0;
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
-
-.page-item:last-child .page-link {
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
-}
-
+.page-link:hover,
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
   background-color: #0a59f7;
-  border-color: #0a59f7;
+  text-decoration: none;
 }
 
 .page-item.disabled .page-link {

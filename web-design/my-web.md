@@ -151,7 +151,9 @@
 ### bootstrap+pagination 分页
 
 -   分页按钮
--   跳转按钮
+    `.pagination>.page-item>a.page-link`
+-   pagination生成函数
+    -   setPagination
 
 ### 爬虫界面框
 
