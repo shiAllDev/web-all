@@ -1,0 +1,120 @@
+/* ======================================= control btn ======================================= 
+ * @description: 控制按钮
+*/
+
+.control-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 24px;
+	width: calc(1.5em + 3px);
+	height: calc(1.5em + 3px);
+	text-align: center;
+	border-radius: 0.25em;
+	background-color: rgba(129, 129, 129, 0.3);
+	backdrop-filter: blur(5px);
+	z-index: 1000;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.control-btn.btn-lg {
+	font-size: 32px;
+}
+.control-btn.btn-sm {
+	font-size: 16px;
+}
+
+.control-btn:hover {
+	background-color: var(--light-blue-color);
+	color: var(--light-bg-color);
+}
+
+.hide-wrap.pos-right {
+	transform: translateX(101%);
+}
+.hide-wrap.pos-left {
+	transform: translateX(-101%);
+}
+.hide-wrap.pos-top {
+	transform: translateY(-101%);
+}
+.hide-wrap.pos-bottom {
+	transform: translateY(101%);
+}
+
+/* ======================================= hide wrap ======================================= 
+ * @description: 控制该类进行边界隐藏，通过鼠标移入该元素或者wrap-toggle-btn显示该元素
+ * 通过pos-top/bottom/right/left 控制方向
+*/
+.hide-wrap:hover {
+	transform: translate(0, 0);
+}
+
+.hide-wrap .wrap-toggle-btn {
+	position: absolute;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 1rem;
+	background-color: #fff8;
+	box-shadow: 0 0 3px #0003;
+	cursor: pointer;
+	opacity: 0.75;
+	transition: all 0.2s ease;
+}
+
+.hide-wrap.pos-left .wrap-toggle-btn,
+.hide-wrap.pos-right .wrap-toggle-btn {
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1rem;
+	height: 20%;
+	min-height: 2rem;
+	max-height: 5rem;
+}
+
+.hide-wrap.pos-top .wrap-toggle-btn,
+.hide-wrap.pos-bottom .wrap-toggle-btn {
+	left: 50%;
+	transform: translateX(-50%);
+	height: 1rem;
+	width: 20%;
+	min-width: 2rem;
+	max-width: 5rem;
+}
+
+.hide-wrap.pos-left .wrap-toggle-btn {
+	right: -1rem;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.hide-wrap.pos-right .wrap-toggle-btn {
+	left: -1rem;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.hide-wrap.pos-top .wrap-toggle-btn,
+.hide-wrap.pos-bottom .wrap-toggle-btn {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.hide-wrap.pos-bottom .wrap-toggle-btn {
+	top: -1rem;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.hide-wrap.pos-top .wrap-toggle-btn {
+	bottom: -1rem;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+/* =======================================  ======================================= 
+ * @description: 
+*/
+

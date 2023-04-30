@@ -1,40 +1,5 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-body {
-	min-height: 100vh;
-	font-family: "HarmonyOSHans", "PingFang SC", "HarmonyOS Sans Regular",
-		Helvetica Neue, Microsoft YaHei, sans-serif;
-	background-color: var(--light-bg-color);
-}
-
-a {
-	font-style: unset;
-	text-decoration: none;
-}
-
-input,
-button {
-	border: none;
-	outline: none;
-}
-:root {
-	--light-bg-color: #f1f3f5;
-	--light-blue-color: #0a59f7;
-}
-
-/*================================== main css ==================================*/
-
 .container {
 	min-height: 200vh;
-}
-
-:root {
-	--side-nav-ftsz: 18px;
-	--side-nav-wth: 140px;
 }
 
 .side-nav-wrap {
@@ -155,14 +120,4 @@ main {
 }
 ul {
 	list-style: auto;
-}
-
-code {
-	display: inline-block;
-	padding: 2px 0.25em;
-	margin: 0 2px;
-	background-color: #333;
-	color: #fff;
-	font-family: consolas;
-	border-radius: 4px;
 }

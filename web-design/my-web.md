@@ -67,9 +67,11 @@
 
 ### item 操作按钮 kit-box
 
--   默认为绝对定位，垂直方向
+-   默认为相对定位，水平方向
 -   垂直方向
     属性`vertical:"true"`
+-   绝对定位
+    `.pos-abs`
 -   kit-item
 
 ### bootstrap+modal 模态框
@@ -146,13 +148,13 @@
 -   play video
 -   related video
 -   operate video
--   screenshoots
+-   screenshots
 
 ### bootstrap+pagination 分页
 
 -   分页按钮
     `.pagination>.page-item>a.page-link`
--   pagination生成函数
+-   pagination 生成函数
     -   setPagination
 
 ### 爬虫界面框

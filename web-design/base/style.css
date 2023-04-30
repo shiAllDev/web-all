@@ -1,7 +1,37 @@
+:root {
+	--font-family: "HarmonyOSHans", "PingFang SC", "HarmonyOS Sans Regular",
+		Helvetica Neue, Microsoft YaHei, sans-serif;
+	--light-bg-color: #f1f3f5;
+	--light-blue-color: #0a59f7;
+	--screen-font-size: 12px;
+	--side-nav-ftsz: 18px;
+	--side-nav-wth: 140px;
+	--top-navbar-ht: 60px;
+	--topnav-search-input-wd: 15em;
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 3px;
+	height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgb(126, 126, 126);
+	border-radius: 2em;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #fff;
+	border-radius: 2em;
 }
 
 body {
@@ -21,14 +51,6 @@ button {
 	border: none;
 	outline: none;
 }
-:root {
-	--light-bg-color: #F1F3F5;
-	--light-blue-color: #0A59F7;
-	--side-nav-ftsz: 18px;
-	--side-nav-wth: 140px;
-	--top-navbar-ht: 60px;
-	--topnav-search-input-wd: 15em;
-}
 
 code {
 	display: inline-block;
@@ -39,5 +61,3 @@ code {
 	font-family: consolas;
 	border-radius: 4px;
 }
-
-/*================================== main css ==================================*/

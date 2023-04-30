@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video player modal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../lib/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../base/style.css">
+    <link rel="stylesheet" href="../base/components.css">
+    <link rel="stylesheet" href="../base/keyframes.css">
+    <link rel="stylesheet" href="../modal/style.css">
+    <link rel="stylesheet" href="../fluid-video-list/style.css">
+    <link rel="stylesheet" href="../kit-box/style.css">
+    <link rel="stylesheet" href="../lib/video.js/video-js.min.css">
+    <script src="../lib/video.js/video.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="modal fade" id="video-info-modal" data-keyboard="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">video info modal</h5>
+                    <div class="modal-control-wrap">
+                        <button type="button" class="fa fa-minus"></button>
+                        <button type="button" class="fa fa-window-maximize"
+                            onclick="toggleAncestorClass(this, 5, 'modal-fullscreen', '','fa-window-maximize', 'fa-window-restore')"></button>
+                        <button type="button" class="fa fa-close" data-dismiss="modal"></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="video-play-wrap">
+                        <div class="play-video-wrap">
+                            <video id="video-player" class="video-js vjs-big-play-centered" controls
+                                preload="false"></video>
+                            <div class="video-timenode-wrap hide-wrap pos-right">
+                                <div class="wrap-toggle-btn"><i class="fa fa-chevron-left"></i></div>
+                                <div class="timenode-list">
+                                    <div class="timenode-item">
+                                        <div class="video-cover-wrap">
+                                            <img src="https://images2.alphacoders.com/456/thumbbig-456261.webp" alt=""
+                                                class="video-cover">
+                                            <span class="timenode">00:12:13</span>
+                                        </div>
+                                    </div>
+                                    <div class="timenode-item">
+                                        <div class="video-cover-wrap">
+                                            <img src="https://images2.alphacoders.com/456/thumbbig-456261.webp" alt=""
+                                                class="video-cover">
+                                            <span class="timenode">00:22:13</span>
+                                        </div>
+                                    </div>
+                                    <div class="timenode-item">
+                                        <div class="video-cover-wrap">
+                                            <img src="https://images2.alphacoders.com/456/thumbbig-456261.webp" alt=""
+                                                class="video-cover">
+                                            <span class="timenode">01:12:13</span>
+                                        </div>
+                                    </div>
+                                    <div class="timenode-item">
+                                        <div class="video-cover-wrap">
+                                            <img src="https://images2.alphacoders.com/456/thumbbig-456261.webp" alt=""
+                                                class="video-cover">
+                                            <span class="timenode">02:12:00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="operate-video-wrap">
+                            <div class="kit-box-wrap">
+                                <div class="kit-item fa fa-heart"></div>
+                                <div class="kit-item fa fa-comment"
+                                    onclick="toggleAimClass('#video-comment-wrap', 'show')"></div>
+                                <div class="kit-item fa fa-camera"></div>
+                                <div class="kit-item fa fa-map-marker"></div>
+                                <div class="kit-item fa fa-image"
+                                    onclick="toggleAimClass('#video-scshot-wrap', 'show')">
+                                </div>
+                                <div class="kit-item fa fa-arrows-alt"></div>
+                            </div>
+                        </div>
+
+                        <div class="related-video-wrap video-list-wrap hide-wrap pos-bottom">
+                            <div class="wrap-toggle-btn"><i class="fa fa-chevron-up"></i></div>
+                            <div class="video-list no-animation horizon-scroll">
+                                <div class="video-item">
+                                    <a class="video-cover-wrap">
+                                        <div class="play-animation">
+                                            <button class="fa fa-play"></button>
+                                        </div>
+                                        <img src="https://images2.alphacoders.com/456/thumbbig-456261.webp" alt=""
+                                            class="video-cover">
+                                        <div class="video-bubble-info">
+                                            <div class="bubble-item">类型</div>
+                                            <div class="bubble-item to-right"><i
+                                                    class="fa fa-clock-o"></i>&ensp;00:35:04
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="video-info-wrap">
+                                        <a href="" class="video-title">video titleo title 视频标题</a>
+                                    </div>
+                                </div>
+                                <div class="video-item">
+                                    <a class="video-cover-wrap">
+                                        <img src="https://images6.alphacoders.com/605/thumbbig-605563.webp" alt=""
+                                            class="video-cover">
+                                        <div class="video-bubble-info">
+                                            <div class="bubble-item">类型</div>
+                                            <div class="bubble-item to-right"><i
+                                                    class="fa fa-clock-o"></i>&ensp;00:35:04
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="video-info-wrap">
+                                        <a href="" class="video-title">video titleo title 视频标题</a>
+                                    </div>
+                                </div>
+                                <div class="video-item">
+                                    <a class="video-cover-wrap">
+                                        <img src="https://64.media.tumblr.com/906c8322835a9ce2b1581902123f4cd4/737f2ef5af806c84-19/s400x600/275c6266b85138b7f0da18808fcb1ff91af59c1d.jpg"
+                                            alt="" class="video-cover">
+                                        <div class="video-bubble-info">
+                                            <div class="bubble-item">类型</div>
+                                            <div class="bubble-item to-right"><i
+                                                    class="fa fa-clock-o"></i>&ensp;00:35:04
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="video-info-wrap">
+                                        <a href="" class="video-title">video titleo title 视频标题</a>
+                                    </div>
+                                </div>
+                                <div class="video-item">
+                                    <a class="video-cover-wrap">
+                                        <img src="https://images7.alphacoders.com/456/456268.jpg" alt=""
+                                            class="video-cover">
+                                        <div class="video-bubble-info">
+                                            <div class="bubble-item">类型</div>
+                                            <div class="bubble-item to-right"><i
+                                                    class="fa fa-clock-o"></i>&ensp;00:35:04
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="video-info-wrap">
+                                        <a href="" class="video-title">video titleo title 视频标题</a>
+                                    </div>
+                                </div>
+                                <div class="video-item">
+                                    <a class="video-cover-wrap">
+                                        <img src="https://64.media.tumblr.com/39c7e11c1260883e1a249a6a17a247df/tumblr_ons4sws28z1uimac5o1_400.jpg"
+                                            alt="" class="video-cover">
+                                        <div class="video-bubble-info">
+                                            <div class="bubble-item">类型</div>
+                                            <div class="bubble-item to-right"><i
+                                                    class="fa fa-clock-o"></i>&ensp;00:35:04
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="video-info-wrap">
+                                        <a href="" class="video-title">video titleo title 视频标题</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-wrap hide2show-animation" id="video-scshot-wrap">
+                            <div class="kit-box-wrap pos-abs">
+                                <div class="kit-item fa fa-arrows-alt"></div>
+                                <div class="kit-item fa fa-times"
+                                    onclick="toggleAimClass('#video-scshot-wrap', 'show')">
+                                </div>
+                            </div>
+                            <div class="screenshot-list">
+                                <div class="screenshot-item">
+                                    <div class="kit-box-wrap pos-abs">
+                                        <div class="kit-item fa fa-trash" onclick="removeAncestor(this, 2)"></div>
+                                        <div class="kit-item fa fa-cloud-download"></div>
+                                    </div>
+                                    <div class="video-cover-wrap">
+                                        <img src="https://images7.alphacoders.com/456/456268.jpg" alt=""
+                                            class="video-cover" />
+                                    </div>
+                                </div>
+                                <div class="screenshot-item">
+                                    <div class="kit-box-wrap pos-abs">
+                                        <div class="kit-item fa fa-trash" onclick="removeAncestor(this, 2)"></div>
+                                        <div class="kit-item fa fa-cloud-download"></div>
+                                    </div>
+                                    <div class="video-cover-wrap">
+                                        <img src="https://64.media.tumblr.com/0195b9493be0add5c8f1a5528efc5d1d/ba8692faa66df87b-43/s540x810/4a40028593b5ea709322b1c2bd5097fb55934812.jpg"
+                                            alt="" class="video-cover" />
+                                    </div>
+                                </div>
+                                <div class="screenshot-item">
+                                    <div class="kit-box-wrap pos-abs">
+                                        <div class="kit-item fa fa-trash" onclick="removeAncestor(this, 2)"></div>
+                                        <div class="kit-item fa fa-cloud-download"></div>
+                                    </div>
+                                    <div class="video-cover-wrap">
+                                        <img src="https://64.media.tumblr.com/39c7e11c1260883e1a249a6a17a247df/tumblr_ons4sws28z1uimac5o1_400.jpg"
+                                            alt="" class="video-cover" />
+                                    </div>
+                                </div>
+                                <div class="screenshot-item">
+                                    <div class="kit-box-wrap pos-abs">
+                                        <div class="kit-item fa fa-trash" onclick="removeAncestor(this, 2)"></div>
+                                        <div class="kit-item fa fa-cloud-download"></div>
+                                    </div>
+                                    <div class="video-cover-wrap">
+                                        <img src="https://64.media.tumblr.com/c5b34069a79a262b541f7ff5ba047d35/185d1c72e2358e06-b8/s540x810/e4dc2dd9600896a30ebe79fba794675654b6ad6a.jpg"
+                                            alt="" class="video-cover" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-video-wrap hide2show-animation" id="video-comment-wrap">
+                            <div class="wrap-header">
+                                <div class="kit-box-wrap pos-abs">
+                                    <div class="kit-item fa fa-arrows-alt"></div>
+                                    <div class="kit-item fa fa-times"
+                                        onclick="toggleAimClass('#video-comment-wrap', 'show')">
+                                    </div>
+                                </div>
+                                <div class="wrap-title">视频评价</div>
+                            </div>
+                            <textarea name="comment" readonly="true" placeholder="comment video :)"></textarea>
+                            <div class="btn-wrap">
+                                <button class="btn btn-primary"
+                                    onclick="let comment = this.parentElement.parentElement.querySelector('textarea'); comment.readOnly = !comment.readOnly; this.textContent = this.textContent == '编辑' ? '只读' : '编辑'">编辑</button>
+                                <button class="btn btn-primary">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-md">
+        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#video-info-modal">
+            video player modal
+        </button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="../lib/bootstrap/bootstrap.js"></script>
+    <script src="../base/main.js"></script>
+    <script src="../base/components.js"></script>
+    <script src="../modal/main.js"></script>
+    <script src="../kit-box/main.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

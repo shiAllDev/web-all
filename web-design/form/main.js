@@ -19,23 +19,6 @@
         }, false);
     })();
 
-    // 设置鼠标滚动隐藏内容，为 .scrollhide，添加/删除的类: .transparent
-    let prevScrollpos = window.pageYOffset;
-    window.onscroll = function () {
-        let currentScrollPos = window.pageYOffset;
-        const elems = document.querySelectorAll('.scrollhide');
-        if (prevScrollpos > currentScrollPos) {
-            for (let elem of elems) {
-                elem.classList.remove('transparent');
-            }
-        } else {
-            for (let elem of elems) {
-                elem.classList.add('transparent');
-            }
-        }
-        prevScrollpos = currentScrollPos;
-    }
-
     for(let e of document.querySelectorAll('.tag-filter-wrap input')) {
         e.addEventListener('input', function() {
             let fltstr = this.value.trim().toUpperCase();
@@ -90,21 +73,6 @@ function selectTag(e) {
     e.setAttribute('selected', 'true');
 }
 
-
-/******* 
- * 为向上回溯深度为 depth 的祖先向 classList 中添加/删除 className 类
- * @param  e [DOM] 
- * @param  className [string] add className to parent classList 
- * @param  depth [int] the aim ancestor depth
- */
-function toggleAncestorClass(e, className, depth) {
-    let ancestor = e.parentNode;
-    while (depth != undefined && depth >= 2) {
-        ancestor = ancestor.parentNode;
-        --depth;
-    }
-    ancestor.classList.toggle(className);
-}
 
 function addTag(name) {
     // tag name: name

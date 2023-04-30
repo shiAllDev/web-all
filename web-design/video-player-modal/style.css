@@ -1,0 +1,240 @@
+/* 最外层wrap */
+.video-play-wrap {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	background-color: var(--light-bg-color);
+}
+/* 视频播放wrap */
+.video-play-wrap .play-video-wrap {
+	position: relative;
+	width: 100%;
+	padding-bottom: min(
+		56.25%,
+		calc(100vh - 5.5rem)
+	); /* 宽高比为16:9，即高度为宽度的56.25% */
+}
+
+.video-play-wrap .play-video-wrap #video-player {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* 视频播放时间结点wrap */
+.video-play-wrap .video-timenode-wrap {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	padding: 0.25rem 0;
+	transition: all 0.3s ease;
+}
+
+.video-timenode-wrap .timenode-list {
+	width: 120px;
+	max-width: 20vw;
+	height: 100%;
+	max-height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 0.25rem;
+	align-content: flex-start;
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(2px);
+	overflow-y: auto;
+}
+
+.video-timenode-wrap .timenode-list .timenode-item {
+	width: 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.video-timenode-wrap .timenode-list .timenode-item .timenode {
+	position: absolute;
+	bottom: 0.125rem;
+	left: 0.125rem;
+	font-size: 0.75rem;
+	color: var(--light-bg-color);
+	padding: 0.125rem 0.25rem;
+	background-color: #0008;
+	border-radius: 0.25rem;
+}
+
+/* 相关视频列表wrap */
+.video-play-wrap .related-video-wrap {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	margin: 0;
+	padding: 0 0.25rem;
+	border-radius: 0.125rem;
+	background-color: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(5px);
+}
+
+.video-play-wrap .related-video-wrap .wrap-toggle-btn {
+	left: 2rem;
+	transform: translate(0);
+}
+
+.video-play-wrap .related-video-wrap .video-list {
+	flex-wrap: nowrap;
+	gap: 0.25rem;
+	overflow-x: auto;
+	transition: all 0.3s ease;
+	width: auto;
+}
+
+.video-play-wrap .operate-video-wrap {
+	width: 100%;
+	height: fit-content;
+}
+
+@media screen and (max-width: 960px) {
+	.video-play-wrap .related-video-wrap {
+		position: relative;
+		transform: translate(0);
+	}
+	.video-play-wrap .related-video-wrap .wrap-toggle-btn {
+		display: none;
+	}
+
+	.video-play-wrap .related-video-wrap .video-list {
+		flex-wrap: wrap;
+		overflow: unset;
+	}
+}
+
+/* 视频截图wrap */
+.video-play-wrap .screenshot-wrap.show {
+	display: block;
+}
+
+.video-play-wrap .screenshot-wrap {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 0.5rem;
+	background-color: #fff8;
+	backdrop-filter: blur(5px);
+	width: 80vw;
+	max-width: 1024px;
+	border-radius: 0.5rem;
+	z-index: 999;
+}
+
+.video-play-wrap .screenshot-wrap .screenshot-list {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	gap: 0.5rem;
+	height: 75vh;
+	max-height: 75vh;
+	border-radius: 0.5rem;
+	overflow: auto;
+	box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.15);
+}
+
+.video-play-wrap .screenshot-wrap .screenshot-list .screenshot-item {
+	position: relative;
+	width: 100%;
+}
+
+.video-play-wrap
+	.screenshot-wrap
+	.screenshot-list
+	.screenshot-item
+	.kit-box-wrap {
+	bottom: 0;
+	top: unset;
+}
+
+/* 视频评价wrap */
+.video-play-wrap .comment-video-wrap {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80%;
+	display: none;
+	flex-direction: column;
+	background-color: #fff;
+	backdrop-filter: blur(4px);
+	border-radius: 0.5rem;
+	z-index: 999;
+}
+
+.video-play-wrap .comment-video-wrap.show {
+	display: flex;
+}
+
+.video-play-wrap .comment-video-wrap .wrap-header {
+	font-size: 1.2rem;
+	padding: 0.5rem;
+	border-bottom: 1px solid #e1e2e3;
+}
+.video-play-wrap .comment-video-wrap .btn-wrap {
+	display: flex;
+	gap: 0.25rem;
+}
+
+.video-play-wrap .comment-video-wrap .btn-wrap * {
+	flex-grow: 1;
+}
+
+.video-play-wrap .comment-video-wrap textarea {
+	outline: none;
+	resize: none;
+	border: 0;
+	padding: 0.25rem;
+	height: 360px;
+	width: 100%;
+	max-width: 90vw;
+	max-height: 60vh;
+	font-size: 0.9rem;
+}
+
+.video-play-wrap .comment-video-wrap button {
+	border-radius: 0;
+}
+
+/* 显示播放按钮 */
+.play-animation {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.3);
+	opacity: 0;
+	transition: all .3s ease;
+}
+
+.play-animation:hover {
+	opacity: 1;
+}
+
+.play-animation button {
+	font-size: 1rem;
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff0;
+	border-radius: 50%;
+	border: 3px solid #fff;
+	color: #fff;
+}
+
