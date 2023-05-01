@@ -114,7 +114,56 @@
 	border-top-right-radius: 0;
 }
 
+/* ======================================= 淡入淡出动画 ======================================= 
+ * @description: 初始为通过设置visibility隐藏元素，通过为该类添加.show类进行展示
+*/
+.fade-hide-show {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.fade-hide-show.show {
+	visibility: visible;
+	opacity: 1;
+}
+
+/* ======================================= 控制按钮 ======================================= 
+ * @description: 相对定位的按钮wrap，所有的按钮为button
+*/
+
+.control-btn-wrap {
+	display: -ms-flexbox;
+    display: flex;
+    flex: none;
+    gap: .5rem;
+    padding: 0.25rem;
+    height: auto;
+	width: fit-content;
+    margin-left: auto;
+	place-content: flex-end;
+    align-items: center;
+    font-size: 20px;
+}
+
+.control-btn-wrap button {
+	padding: 0.125rem;
+	color: #000;
+	background-color: #fff8;
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 0.25rem;
+	opacity: 0.5;
+}
+
+.control-btn-wrap button:hover {
+	opacity: 1;
+}
+
+.control-btn-wrap button.fa {
+	font-weight: 100;
+}
+
 /* =======================================  ======================================= 
  * @description: 
 */
-

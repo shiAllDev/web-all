@@ -1,5 +1,10 @@
 // window load函数入口
 (function () {
+    // 设置video-play-modal的关闭事件
+    $('#myModal').on('hide.bs.modal', function (event) {
+
+    })
+
     var options = {
         controls: true,
         autoplay: false,
@@ -67,11 +72,6 @@
         player.controlBar.addChild('ScreenshotButton', {});
     });
 })();
-
-function Comment() {
-    let e = document.querySelector('#comment')
-    e.readOnly = !e.readOnly;
-}
 
 /*******
  * 获取视频截图项HTML

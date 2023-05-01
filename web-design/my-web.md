@@ -145,10 +145,43 @@
 
 ### video player modal
 
+-   video-play-wrap
+    最外层容器
 -   play video
--   related video
--   operate video
--   screenshots
+    `.play-video-wrap`
+    -   `video#video-player.video-vjs.vjs-big-play-centered`
+        视频播放
+    -   `.video-timenode-wrap.hide-wrap.pos-right`
+        视频播放时间节点，隐藏于右边
+        -   `.wrap-toggle-btn`
+            通过鼠标移入该按钮，进行显示该列表
+        -   `.timdenode-list`
+        -   `.timdenode-item>.video-cover-wrap>img.video-cover+.timenode`
+-   `.operate-video-wrap>.kit-box-wrap`
+    视频操作按钮组容器
+    -   commet 评价
+        显示评价弹窗
+    -   snapshot 截图
+    -   time marker 时间结点
+    -   fullscreen 全屏
+-   `.related-video-wrap`
+    `.video-list-wrap.hide-wrap.pos-bottom`
+
+    -   `.wrap-toggle-btn`
+        鼠标移动入该按钮，则显示该列表
+    -   `.video-list`
+        `.horizon-scroll`如果当前屏幕宽度小于 960px，该列表将水平滚动
+        -   `.video-item`常规视频项
+
+-   `.screenshot-wrap#video-scshot-wrap`
+    -   `.kit-box-wrap`
+    -   `.screenshot-item`
+        -   `.kit-box-wrap`
+            -   删除按钮
+            -   下载到本地按钮
+        -   `.video-cover-wrap>img`
+-   `.comment-video-wrap`
+    视频评价
 
 ### bootstrap+pagination 分页
 

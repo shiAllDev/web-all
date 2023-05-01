@@ -20,8 +20,10 @@
     // 对于.horizon-scroll改变鼠标滚动方向
     for (const e of document.querySelectorAll('.horizon-scroll')) {
         e.addEventListener('wheel', function (event) {
-            event.preventDefault();
-            this.scrollLeft += event.deltaY;
+            if (e.scrollWidth > e.clientWidth) {
+                event.preventDefault();
+                this.scrollLeft += event.deltaY;
+            }
         });
     }
 })();

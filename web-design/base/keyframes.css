@@ -8,17 +8,17 @@
 }
 
 @keyframes jump {
-  0% {
-    transform: translateY(0.25em);
-  }
-  50% {
-    transform: translateY(-0.25em);
-  }
-  100% {
-    transform: translateY(0);
-  }
+	0% {
+		transform: translateY(0.25em);
+	}
+	50% {
+		transform: translateY(-0.25em);
+	}
+	100% {
+		transform: translateY(0);
+	}
 }
 
 .hide2show-animation {
-  animation: hide2show 0.5s ease 0s 1;
+	animation: hide2show 0.5s ease 0s 1;
 }
