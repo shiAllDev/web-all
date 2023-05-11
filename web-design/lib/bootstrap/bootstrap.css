@@ -1665,7 +1665,7 @@ pre code {
 
 .table {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   color: #212529;
 }
 
@@ -3956,7 +3956,7 @@ input[type="button"].btn-block {
   display: inline-block;
   width: 100%;
   height: calc(1.5em + 0.5rem + 2px);
-  padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+  padding: 0.25rem 1.75rem 0.25rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;

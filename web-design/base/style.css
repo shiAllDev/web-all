@@ -3,6 +3,15 @@
 		Helvetica Neue, Microsoft YaHei, sans-serif;
 	--light-bg-color: #f1f3f5;
 	--light-blue-color: #0a59f7;
+	--color-grey: #dadada;
+	--color-green: #5BE7C4;
+	--color-blue: #0a59f7;
+	--color-ocean-blue: #324ab2;
+	--color-cyan: #46b1e3;
+	--color-orange: #ed6f21;
+	--color-yellow: #f7ce00;
+	--color-red: #e84826;
+	--color-purple: #564af7;
 	--screen-font-size: 12px;
 	--side-nav-ftsz: 18px;
 	--side-nav-wth: 140px;
@@ -20,17 +29,17 @@
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 3px;
-	height: 3px;
+	width: 4px;
+	height: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: rgb(126, 126, 126);
+	background-color: rgb(211, 211, 211);
 	border-radius: 2em;
 }
 
 ::-webkit-scrollbar-track {
-	background-color: #fff;
+	background-color: #fff5;
 	border-radius: 2em;
 }
 
@@ -60,4 +69,11 @@ code {
 	color: #fff;
 	font-family: consolas;
 	border-radius: 4px;
+}
+
+input[type=number] {
+	border: 1px solid #ced4da;
+	padding: 0.125em 0 0.125em 0.5em;
+	border-radius: 0.25em;
+	letter-spacing: 0.05em;
 }

@@ -5,6 +5,7 @@
 .pagination {
 	gap: 0.25rem;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .pagination .page-item {

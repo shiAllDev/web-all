@@ -192,12 +192,38 @@
 
 ### 爬虫界面框
 
--   控制面板
--   消息框
--   信息框
+-   框架
+    -   `.flex-wrap`
+        -   `.wrap-header`
+            -   `.wrap-title`
+            -   `.control-btn-wrap` e.g.
+        -   `.wrap-content`
+-   数据框`.data-overview-wrap`
+    -   `.filter-wrap`
+    -   `.data-list-wrap`
+    -   `.pagination-wrap#pagination-wrap`
+-   控制面板`.control-panel-wrap`
+    -   `.wrap-header > .progress` 进度条，不显示百分比
+    -   `.ctrl-form`
+        -   `.ctrl-item.form-group`
+            -   `.ctrl-item-title` 控制条目标题
+            -   `.ctrl-item-content` 控制条目内容
+-   消息框`.msg-wrap`
+    -   `.msg-list`
+        -   `.msg-item`
+            -   `.msg-time`
+            -   `.msg-content`
+    -   msg-item 类型类
+        -   默认无
+        -   msg-info
+        -   msg-danger
+        -   msg-warn
+        -   msg-success
 -   结果框
     -   结果列表框
     -   实时动态列表框
+
+### 记录界面
 
 ### 图片展示界面
 

@@ -137,7 +137,6 @@
     display: flex;
     flex: none;
     gap: .5rem;
-    padding: 0.25rem;
     height: auto;
 	width: fit-content;
     margin-left: auto;
@@ -163,6 +162,47 @@
 .control-btn-wrap button.fa {
 	font-weight: 100;
 }
+
+/* ======================================= 拟态input和btn ======================================= 
+ * @description: 
+*/
+.soft-input {
+	padding: 0.375em 0.75em;
+	height: calc(1.5em + 0.75em + 2px);
+	border-radius: 0.5em;
+	border: 2px solid transparent;
+	box-shadow: -2px -2px 8px rgba(255, 255, 255, 0.75),
+		-2px -2px 12px rgba(255, 255, 255, 0.5),
+		inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+		2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.soft-input:focus,
+.soft-input:not(:placeholder-shown) {
+	border-color: transparent;
+	box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.75),
+		inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+		inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+		inset 2px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.soft-btn {
+	border: 2px solid transparent;
+	box-shadow: -2px -2px 8px rgba(255, 255, 255, 0.75),
+		-2px -2px 12px rgba(255, 255, 255, 0.5),
+		inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+		2px 2px 8px rgba(0, 0, 0, 0.15);
+	transition: all .3s ease;
+}
+
+.soft-btn:hover {
+	border-color: transparent;
+	box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.75),
+		inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+		inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+		inset 2px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
 
 /* =======================================  ======================================= 
  * @description: 

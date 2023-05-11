@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../lib/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../base/style.css">
+    <link rel="stylesheet" href="../base/components.css">
+    <link rel="stylesheet" href="../base/keyframes.css">
+    <link rel="stylesheet" href="../form/style.css">
+    <link rel="stylesheet" href="../pagination/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="spider-page-wrap">
+        <div class="data-overview-wrap flex-wrap">
+            <div class="wrap-header">
+                <div class="wrap-title">数据总览</div>
+                <div class="control-btn-wrap">
+                    <button class="fa fa-close"></button>
+                </div>
+            </div>
+            <div class="wrap-content">
+                <form class="filter-wrap" onclick="return false;">
+                    <input type="search" class="form-control" name="filter-1">
+                    <select name="filter-3" id="" class="custom-select">
+                        <option value="" disabled selected>default option</option>
+                        <option value="1">option_1</option>
+                        <option value="2">option_2</option>
+                    </select>
+                    <button type="reset" class="btn btn-primary">重置</button>
+                    <button type="button" class="btn btn-primary">搜索</button>
+                </form>
+                <div class="data-list-wrap">
+                    <table class="table table-sm table-hover">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td><a href="">link</a></td>
+                                <td>@fat</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination-wrap pagination" id="pagination-wrap">
+                </div>
+            </div>
+        </div>
+        <div class="control-panel-wrap flex-wrap">
+            <div class="wrap-header">
+                <div class="wrap-title">控制中心</div>
+                <div class="progress abs-bottom">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                        aria-valuemax="100" style="width: 50%"></div>
+                </div>
+            </div>
+            <div class="wrap-content">
+                <form class="ctrl-form mini-form needs-validation" novalidate>
+                    <div class="ctrl-item form-group">
+                        <div class="ctrl-item-title">普通输入框</div>
+                        <div class="ctrl-item-content">
+                            <input type="text" class="form-control soft-input" placeholder="控制项" required>
+                            <div class="invalid-feedback">请输入内容！</div>
+                        </div>
+                    </div>
+                    <div class="ctrl-item form-group">
+                        <div class="ctrl-item-title">下拉菜单</div>
+                        <div class="ctrl-item-content">
+                            <select class="custom-select" required>
+                                <optgroup label="都">
+                                    <option>东京都</option>
+                                </optgroup>
+                                <optgroup label="道">
+                                    <option>北海道</option>
+                                </optgroup>
+                                <optgroup label="府">
+                                    <option>京都府</option>
+                                    <option>大阪府</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="ctrl-item form-group">
+                        <div class="ctrl-item-title">复选框</div>
+                        <div class="ctrl-item-content">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"
+                                    disabled>
+                                <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ctrl-item form-group">
+                        <div class="ctrl-item-title">单选框</div>
+                        <div class="ctrl-item-content">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    value="option2">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                                    value="option3" disabled>
+                                <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ctrl-item form-group">
+                        <div class="ctrl-item-title">文本域</div>
+                        <div class="ctrl-item-content">
+                            <textarea class="form-control" id="validationTextarea"
+                                placeholder="Required example textarea" rows="3" required></textarea>
+                            <div class="invalid-feedback">
+                                Please enter a message in the textarea.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ctrl-item form-group">
+                        <div class="ctrl-item-title">数字输入框</div>
+                        <div class="ctrl-item-content">
+                            <input type="number" min="0" max="10" step="1" value="0">
+                        </div>
+                    </div>
+                    <div class="ctrl-item form-group">
+                        <div class="ctrl-item-title">滑动范围</div>
+                        <div class="ctrl-item-content">
+                            <input type="range" class="custom-range" id="customRange1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Check me out
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="reset" class="btn btn-primary">重置</button>
+                        <button type="submit" class="btn btn-primary">开始</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="msg-wrap flex-wrap">
+            <div class="wrap-header">
+                <div class="wrap-title">消息列表</div>
+                <div class="data-wrap ml-auto">
+                    <div class="data-item">
+                        <div class="data-title">数据标题</div>
+                        <div class="data-data" data-raw="0">0</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-title">数据标题</div>
+                        <div class="data-data" data-raw="0">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-content">
+                <div class="msg-list">
+                    <div class="msg-item">
+                        <div class="msg-time">23:14</div>
+                        <div class="msg-content">普通消息</div>
+                    </div>
+                    <div class="msg-item">
+                        <div class="msg-time">23:14</div>
+                        <div class="msg-content">
+                            <p>2006年，参演电视剧《与青春有关的日子》，开始在影视圈崭露头角 。</p>
+                            <p>2005年，拍摄古装剧《锦衣卫》。2007年，主演赵宝刚导演的青春剧《奋斗》；同年，主演首部电影《走着瞧》。</p>
+                            <p>2008年，主演滕华涛执导的电视剧《蜗居》，饰演80后城市青年小贝 。</p>
+                            <p>2011年，主演的电视剧《裸婚时代》播出最受大学生欢迎男演员奖。</p>
+                            <p>2012年，凭借电影《失恋33天》获得第31届大众电影百花奖最佳男主角奖；同年，成立北京君竹影视文化有限公司，并导演第一部影视作品《小爸爸》。</p>
+                            <p>2013年2月，主演的电影《西游·降魔篇》在全国上映 。2014年3月28日，主演的爱情片《我在路上最爱你》上映。</p>
+                            <p>2014年，在姜文执导的动作喜剧片《一步之遥》中扮演武七一角。</p>
+                            <p>2016年，主演电视剧《少帅》 。</p>
+                            <p>2017年，凭借导演的电影《陆垚知马俐》获得第31届中国电影金鸡奖导演处女作奖 。</p>
+                            <p>2021年8月20日，主演的电影《测谎人》上映。</p>
+                        </div>
+                    </div>
+                    <div class="msg-item">
+                        <div class="msg-time">23:14</div>
+                        <div class="msg-content">带有链接内容<a href="">link 链接</a>的普通消息</div>
+                    </div>
+                    <div class="msg-item msg-info">
+                        <div class="msg-time">23:14</div>
+                        <div class="msg-content">信息消息</div>
+                    </div>
+                    <div class="msg-item msg-danger">
+                        <div class="msg-time">23:14</div>
+                        <div class="msg-content">危险消息</div>
+                    </div>
+                    <div class="msg-item msg-warn">
+                        <div class="msg-time">23:14</div>
+                        <div class="msg-content">警告消息</div>
+                    </div>
+                    <div class="msg-item msg-success">
+                        <div class="msg-time">23:14</div>
+                        <div class="msg-content">成功消息</div>
+                    </div>
+                    <div class="msg-item msg-success">
+                        <div class="msg-time">23:14</div>
+                        <div class="msg-content">带有代码格式内容的<code>has code content</code>成功消息</div>
+                    </div>
+                    <div class="msg-item">
+                        <div class="msg-time">23:14</div>
+                        <div class="msg-content">带有代码格式内容的<code>has code content</code>消息内容</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="data-overview-wrap flex-wrap">
+            <div class="wrap-header">
+                <div class="wrap-title">结果总览</div>
+            </div>
+            <div class="wrap-content">
+                <div class="data-list-wrap">
+                    <table class="table table-sm table-hover">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="../lib/bootstrap/bootstrap.js"></script>
+    <script src="../base/main.js"></script>
+    <script src="../base/components.js"></script>
+    <script src="../form/main.js"></script>
+    <script src="../pagination/main.js"></script>
+    <script src="main.js"></script>
+    <script>
+        setPagination("#pagination-wrap", "/", 201, 10, 1)
+    </script>
+</body>
+
+</html>

@@ -2,7 +2,7 @@ form {
 	margin: 0.5rem;
 }
 
-.mini-form .form-control {
+.mini-form .form-control:not(textarea) {
 	height: calc(1.5em + 0.5rem + 2px);
 	padding: 0.25rem 0.5rem;
 	border-radius: 0.5rem;

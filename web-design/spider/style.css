@@ -1,0 +1,246 @@
+.spider-page-wrap {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 0.5rem;
+	padding: 0.5rem;
+}
+
+.spider-page-wrap .data-overview-wrap,
+.spider-page-wrap .result-wrap {
+	flex-basis: 100%;
+}
+
+.spider-page-wrap .control-panel-wrap,
+.spider-page-wrap .msg-wrap {
+	flex-basis: calc(50% - 0.25rem);
+}
+
+@media screen and (max-width: 960px) {
+	.spider-page-wrap .control-panel-wrap,
+	.spider-page-wrap .msg-wrap {
+		flex-basis: 100%;
+	}
+}
+
+.flex-wrap {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	flex-grow: 0;
+	height: fit-content;
+	overflow: hidden;
+	background-color: #fff;
+	border-radius: 0.3rem;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.flex-wrap .wrap-header {
+	position: relative;
+	display: flex;
+	flex-flow: row wrap;
+	padding: 0.25rem 0.5rem;
+	border-bottom: 2px solid var(--light-bg-color);
+}
+
+.flex-wrap .wrap-header .wrap-title {
+	flex: none;
+	font-size: 1.2rem;
+	font-weight: bold;
+	letter-spacing: 0.1rem;
+	color: var(--color-blue);
+}
+
+.flex-wrap .wrap-content {
+	position: relative;
+	padding: 0.25rem 0;
+}
+
+.spider-page-wrap .msg-wrap .wrap-content {
+	background-color: #0a1120;
+	padding: 0.5rem 0.25rem;
+}
+
+.msg-list {
+	display: flex;
+	flex-flow: column nowrap;
+	font-size: 0.85rem;
+	gap: 2px;
+	height: 320px;
+	max-height: 320px;
+	overflow: auto;
+}
+
+.msg-list .msg-item {
+	display: flex;
+	color: #aab8d3;
+	flex-flow: row nowrap;
+	gap: 0.25em;
+	line-height: calc(1em + 6px);
+}
+
+.msg-list .msg-item .msg-time {
+	font-size: 0.9em;
+	flex: none;
+}
+
+.msg-list .msg-item .msg-content {
+	padding: 0 0.25em;
+	flex-grow: 1;
+	transition: all 0.2s ease;
+}
+
+.msg-list .msg-item.msg-info .msg-content {
+	color: var(--color-cyan);
+}
+.msg-list .msg-item.msg-danger .msg-content {
+	color: var(--color-red);
+}
+.msg-list .msg-item.msg-warn .msg-content {
+	color: var(--color-yellow);
+}
+.msg-list .msg-item.msg-success .msg-content {
+	color: var(--color-green);
+}
+
+.msg-list .msg-item:hover .msg-content {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.msg-list .msg-item a,
+.table a {
+	position: relative;
+	background-color: rgba(255, 255, 255, 0.2);
+	display: inline-block;
+	padding: 0 0.3em;
+	margin: 0 2px;
+	border-radius: 3px;
+	font-size: 1em;
+	background-color: var(--color-blue);
+	color: #fff;
+	text-decoration: none;
+	transition: all .1s;
+}
+
+.msg-list .msg-item a:hover::before,
+.table a:hover::beforedata-overview-wrap  {
+	color: var(--color-red);
+}
+.msg-list .msg-item a::before,
+.table a::before {
+	content: "\f0c1";
+	margin-right: 0.5em;
+	font: normal normal normal 12px/1 FontAwesome;
+}
+.msg-list .msg-item p {
+	margin-bottom: 0;
+}
+
+.data-wrap {
+	display: flex;
+	align-items: center;
+	flex-flow: row wrap;
+	flex: none;
+	font-size: 1rem;
+	gap: 0.5em;
+}
+
+.data-wrap .data-item {
+	display: flex;
+	flex-flow: row nowrap;
+	flex: none;
+	align-items: center;
+	gap: 0.25em;
+	padding: 0 0.25em;
+}
+
+.data-wrap .data-item .data-data {
+	font-size: 0.8em;
+	padding: 0 0.25em;
+	min-width: 2em;
+	text-align: center;
+	background-color: #000;
+	color: #fff;
+	border-radius: 0.25em;
+}
+.ctrl-form {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.ctrl-form .form-control {
+	font-size: 0.9em;
+}
+
+.ctrl-form .form-group:last-of-type {
+	margin-bottom: 0;
+}
+
+.ctrl-form .ctrl-item {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 0.25rem;
+}
+
+.ctrl-form .ctrl-item .ctrl-item-title {
+	flex-basis: 25%;
+	min-width: 120px;
+	max-width: 160px;
+	padding-right: 1rem;
+	display: inline-flex;
+	align-items: top;
+	flex-grow: 0;
+}
+.ctrl-form .ctrl-item .ctrl-item-content {
+	flex-grow: 1;
+}
+
+.control-panel-wrap .progress {
+	height: 2px;
+	left: 0;
+	right: 0;
+}
+
+.abs-bottom {
+	position: absolute;
+	bottom: 0;
+}
+
+.abs-top {
+	position: absolute;
+	top: 0;
+}
+
+.data-overview-wrap .filter-wrap {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: end;
+	margin: 0.25rem;
+	gap: 0.25rem;
+}
+
+.data-overview-wrap .filter-wrap input,
+.data-overview-wrap .filter-wrap select {
+	font-size: 0.9em;
+	width: 25%;
+	max-width: 15rem;
+	min-width: 10rem;
+}
+
+.data-overview-wrap .data-list-wrap {
+	padding: 0 4px;
+	max-height: 30vh;
+	overflow: auto;
+}
+
+.data-list-wrap table {
+	font-size: 0.9rem;
+}
+
+.data-list-wrap .table thead {
+	position: sticky;
+	top: -1px;
+}
+
+.pagination-wrap {
+	padding: 0.25rem 0;
+}
