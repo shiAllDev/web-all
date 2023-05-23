@@ -52,7 +52,6 @@ function toggleAimClass(aim, ...classnames) {
  * @param  {array} classnames class列表以 空字符串 间隔，前面为祖先的，后面的为自身的
  */
 function toggleAncestorClass(e, depth, ...classnames) {
-    console.log(e)
     let anc = e.parentElement;
     while (depth > 1) {
         anc = anc.parentElement;

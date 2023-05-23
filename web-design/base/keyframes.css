@@ -22,3 +22,9 @@
 .hide2show-animation {
 	animation: hide2show 0.5s ease 0s 1;
 }
+
+@keyframes rotate360 {
+	to {
+		transform: rotate(360deg);
+	}
+}

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../lib/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../base/style.css">
+    <link rel="stylesheet" href="../base/components.css">
+    <link rel="stylesheet" href="../base/keyframes.css">
+    <link rel="stylesheet" href="../modal/style.css">
+    <link rel="stylesheet" href="../lib/editor.md/editormd.min.css">
+    <link rel="stylesheet" href="../kit-box/style.css">
+    <link rel="stylesheet" href="drawer-style.css">
+</head>
+
+<body>
+    <div class="modal fade show" id="record-edit-modal" data-keyboard="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">record eidt modal</h5>
+                    <div class="modal-control-wrap">
+                        <button type="button" class="fa fa-minus"></button>
+                        <button type="button" class="fa fa-window-maximize"
+                            onclick="toggleAncestorClass(this, 5, 'modal-fullscreen', '','fa-window-maximize', 'fa-window-restore')"></button>
+                        <button type="button" class="fa fa-close" data-dismiss="modal"></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="record-editor-wrap">
+                        <div class="editor-control">
+                            <button class="btn btn-primary">编辑按钮</button>
+                        </div>
+                        <div class="record-form-wrap">
+                            <div class="form-group">
+                                <label>记录标题</label>
+                                <input class="form-control" type="text" name="title" placeholder="record title:)" />
+                            </div>
+                            <div class="form-group">
+                                <label>记录描述</label>
+                                <input class="form-control" type="text" name="title"
+                                    placeholder="record description:)" />
+                            </div>
+                            <div class="form-group">
+                                <label>标&emsp;签：</label>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="custom-control-input" id="tag-0">
+                                    <label class="custom-control-label" for="tag-0">标签一</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="custom-control-input" id="tag-1">
+                                    <label class="custom-control-label" for="tag-1">标签二</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="custom-control-input" id="tag-2">
+                                    <label class="custom-control-label" for="tag-2">标签三</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="editor-wrap">
+                            <div id="record-editor">
+                                <textarea style="display:none;" name="content"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="drawer-record-wrap">
+        <div class="record-list-wrap">
+            <div class="wrap-header">
+                <div class="wrap-title">抽屉式记录</div>
+            </div>
+            <div class="wrap-content record-list">
+                <div class="record-item">
+                    <div class="item-header">
+                        <div class="item-title" onclick="viewRecord(1)">
+                            记录标题record记录标题record记录标题record记录标题record记录标题record title</div>
+                        <div class="kit-box-wrap no-shadow">
+                            <span class="kit-item fa fa-pencil" onclick="editRecord(1)"></span>
+                            <span class="kit-item fa fa-trash"></span>
+                        </div>
+                    </div>
+                    <div class="item-description">记录项描述 record description记录项描述 record description </div>
+                    <div class="item-pubtime"><i class="fa fa-clock-o">&ensp;</i>2023.05.13 16:05</span></div>
+                    <div class="item-tag-list">
+                        <div class="tag-item">标签一</div>
+                        <div class="tag-item">标签二</div>
+                    </div>
+                </div>
+                <div class="record-item">
+                    <div class="item-header">
+                        <div class="item-title" onclick="viewRecord(1)">记录标题record title</div>
+                        <div class="kit-box-wrap no-shadow">
+                            <span class="kit-item fa fa-pencil" onclick="editRecord(1)"></span>
+                            <span class="kit-item fa fa-trash"></span>
+                        </div>
+                    </div>
+                    <div class="item-description">记录项描述 record description </div>
+                    <div class="item-pubtime"><i class="fa fa-clock-o">&ensp;</i>2023.05.13 16:05</span></div>
+                    <div class="item-tag-list">
+                        <div class="tag-item">标签一</div>
+                        <div class="tag-item">标签二</div>
+                    </div>
+                </div>
+                <div class="record-item">
+                    <div class="item-header">
+                        <div class="item-title" onclick="viewRecord(1)">记录标题record title</div>
+                        <div class="kit-box-wrap no-shadow">
+                            <span class="kit-item fa fa-pencil" onclick="editRecord(1)"></span>
+                            <span class="kit-item fa fa-trash"></span>
+                        </div>
+                    </div>
+                    <div class="item-description">记录项描述 record description </div>
+                    <div class="item-pubtime"><i class="fa fa-clock-o">&ensp;</i>2023.05.13 16:05</span></div>
+                    <div class="item-tag-list">
+                        <div class="tag-item">标签一</div>
+                        <div class="tag-item">标签二</div>
+                    </div>
+                </div>
+                <div class="record-item">
+                    <div class="item-header">
+                        <div class="item-title" onclick="viewRecord(1)">记录标题record title</div>
+                        <div class="kit-box-wrap no-shadow">
+                            <span class="kit-item fa fa-pencil" onclick="editRecord(1)"></span>
+                            <span class="kit-item fa fa-trash"></span>
+
+                        </div>
+                    </div>
+                    <div class="item-description">记录项描述 record description </div>
+                    <div class="item-pubtime"><i class="fa fa-clock-o">&ensp;</i>2023.05.13 16:05</span></div>
+                    <div class="item-tag-list">
+                        <div class="tag-item">标签一</div>
+                        <div class="tag-item">标签二</div>
+                    </div>
+                </div>
+                <div class="record-item">
+                    <div class="item-header">
+                        <div class="item-title" onclick="viewRecord(1)">记录标题record title</div>
+                        <div class="kit-box-wrap no-shadow">
+                            <span class="kit-item fa fa-pencil" onclick="editRecord(1)"></span>
+                            <span class="kit-item fa fa-trash"></span>
+
+                        </div>
+                    </div>
+                    <div class="item-description">记录项描述 record description </div>
+                    <div class="item-pubtime"><i class="fa fa-clock-o">&ensp;</i>2023.05.13 16:05</span></div>
+                    <div class="item-tag-list">
+                        <div class="tag-item">标签一</div>
+                        <div class="tag-item">标签二</div>
+                    </div>
+                </div>
+                <div class="record-item">
+                    <div class="item-header">
+                        <div class="item-title" onclick="viewRecord(1)">记录标题record title</div>
+                        <div class="kit-box-wrap no-shadow">
+                            <span class="kit-item fa fa-pencil" onclick="editRecord(1)"></span>
+                            <span class="kit-item fa fa-trash"></span>
+
+                        </div>
+                    </div>
+                    <div class="item-description">记录项描述 record description </div>
+                    <div class="item-pubtime"><i class="fa fa-clock-o">&ensp;</i>2023.05.13 16:05</span></div>
+                    <div class="item-tag-list">
+                        <div class="tag-item">标签一</div>
+                        <div class="tag-item">标签二</div>
+                    </div>
+                </div>
+                <div class="record-item">
+                    <div class="item-header">
+                        <div class="item-title" onclick="viewRecord(1)">记录标题record title</div>
+                        <div class="kit-box-wrap no-shadow">
+                            <span class="kit-item fa fa-pencil" onclick="editRecord(1)"></span>
+                            <span class="kit-item fa fa-trash"></span>
+
+                        </div>
+                    </div>
+                    <div class="item-description">记录项描述 record description </div>
+                    <div class="item-pubtime"><i class="fa fa-clock-o">&ensp;</i>2023.05.13 16:05</span></div>
+                    <div class="item-tag-list">
+                        <div class="tag-item">标签一</div>
+                        <div class="tag-item">标签二</div>
+                    </div>
+                </div>
+                <div class="record-item">
+                    <div class="item-header">
+                        <div class="item-title" onclick="viewRecord(1)">记录标题record title</div>
+                        <div class="kit-box-wrap no-shadow">
+                            <span class="kit-item fa fa-pencil" onclick="editRecord(1)"></span>
+                            <span class="kit-item fa fa-trash"></span>
+
+                        </div>
+                    </div>
+                    <div class="item-description">记录项描述 record description </div>
+                    <div class="item-pubtime"><i class="fa fa-clock-o">&ensp;</i>2023.05.13 16:05</span></div>
+                    <div class="item-tag-list">
+                        <div class="tag-item">标签一</div>
+                        <div class="tag-item">标签二</div>
+                    </div>
+                </div>
+                <div class="record-item">
+                    <div class="item-header">
+                        <div class="item-title" onclick="viewRecord(1)">记录标题record title</div>
+                        <div class="kit-box-wrap no-shadow">
+                            <span class="kit-item fa fa-pencil" onclick="editRecord(1)"></span>
+                            <span class="kit-item fa fa-trash"></span>
+                        </div>
+                    </div>
+                    <div class="item-description">记录项描述 record description </div>
+                    <div class="item-pubtime"><i class="fa fa-clock-o">&ensp;</i>2023.05.13 16:05</span></div>
+                    <div class="item-tag-list">
+                        <div class="tag-item">标签一</div>
+                        <div class="tag-item">标签二</div>
+                    </div>
+                </div>
+                <div class="record-item">
+                    <div class="item-header">
+                        <div class="item-title" onclick="viewRecord(1)">记录标题record title</div>
+                        <div class="kit-box-wrap no-shadow">
+                            <span class="kit-item fa fa-pencil" onclick="editRecord(1)"></span>
+                            <span class="kit-item fa fa-trash"></span>
+                        </div>
+                    </div>
+                    <div class="item-description">记录项描述 record description </div>
+                    <div class="item-pubtime"><i class="fa fa-clock-o">&ensp;</i>2023.05.13 16:05</span></div>
+                    <div class="item-tag-list">
+                        <div class="tag-item">标签一</div>
+                        <div class="tag-item">标签二</div>
+                    </div>
+                </div>
+                <div class="record-item">
+                    <div class="item-header">
+                        <div class="item-title" onclick="viewRecord(1)">记录标题record title</div>
+                        <div class="kit-box-wrap no-shadow">
+                            <span class="kit-item fa fa-pencil" onclick="editRecord(1)"></span>
+                            <span class="kit-item fa fa-trash"></span>
+                        </div>
+                    </div>
+                    <div class="item-description">记录项描述 record description </div>
+                    <div class="item-pubtime"><i class="fa fa-clock-o">&ensp;</i>2023.05.13 16:05</span></div>
+                    <div class="item-tag-list">
+                        <div class="tag-item">标签一</div>
+                        <div class="tag-item">标签二</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="record-view-wrap" id="record-view-wrap">
+            <div class="wrap-header">
+                <div class="kit-box-wrap pos-abs">
+                    <div class="kit-item fa fa-copy"></div>
+                    <div class="kit-item fa fa-pencil"></div>
+                    <div class="kit-item fa fa-times close-kit" onclick="toggleAncestorClass(this, 3, 'show')"></div>
+                </div>
+            </div>
+            <div class="wrap-content">
+            </div>
+        </div>
+        <div class="record-control-wrap">
+            <div class="add-record-btn" data-toggle="modal" data-target="#record-edit-modal">
+                <div class="fa fa-plus"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="../lib/bootstrap/bootstrap.js"></script>
+    <script src="../lib/editor.md/editormd.min.js"></script>
+    <script src="../base/main.js"></script>
+    <script src="../lib/editor.md/lib/marked.min.js"></script>
+    <script src="../lib/editor.md/lib/prettify.min.js"></script>
+    <script src="../base/components.js"></script>
+    <script src="drawer-record.js"></script>
+</body>
+
+</html>

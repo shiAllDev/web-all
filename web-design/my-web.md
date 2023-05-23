@@ -67,12 +67,14 @@
 
 ### item 操作按钮 kit-box
 
+-   `.kit-box-wrap>.kit-item`
 -   默认为相对定位，水平方向
 -   垂直方向
-    属性`vertical:"true"`
+    属性`vertical`
 -   绝对定位
     `.pos-abs`
 -   kit-item
+-   无边框阴影`.kit-box-wrap.no-shadow`
 
 ### bootstrap+modal 模态框
 
@@ -224,6 +226,40 @@
     -   实时动态列表框
 
 ### 记录界面
+
+-   `# .record-edit-modal`
+    -   `.modal-header`
+        -   `.modal-control-wrap`
+    -   `.modal-body`
+        -   `.record-editor-wrap`
+            -   `.editor-control`
+            -   `.record-form-wrap`
+            -   `.editor-wrap>#record-editor`
+                使用的是开源组件 editor.md
+-   `.drawer-record-wrap`
+    -   `.record-list-wrap`
+        -   `.wrap-header>.wrap-title`
+        -   `.wrap-content.record-list`
+            -   `.record-item`
+                -   `.item-header`
+                    -   `.item-title onclick="viewRecord(record_id)"`
+                    -   `.kit-box-wrap`
+                        -   编辑 `onclick="editRecord(record_id)"`
+                        -   删除
+                -   `.item-description`
+                -   `.item-pubtime`
+                -   `.item-tag-list>.tag-item`
+    -   `# .record-view-wrap`
+        如果屏幕宽度小于 720px，将会以绝对定位隐藏
+        -   `.wrap-header>.kit-box-wrap`
+            -   复制
+            -   编辑
+            -   隐藏，这是在屏幕宽度小于 720px 的情况下才会显示
+        -   `.wrap-content`
+            通过 editor.md 将 markdown 文本转换为 html 文本
+    -   `.record-control-wrap`
+        -   `.add-record-btn`
+            edit modal toggle 按钮
 
 ### 图片展示界面
 

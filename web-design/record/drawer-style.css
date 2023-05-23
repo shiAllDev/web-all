@@ -1,0 +1,321 @@
+body {
+	background: url(https://w.wallhaven.cc/full/ex/wallhaven-ex9gwo.png);
+}
+
+.drawer-record-wrap {
+	position: relative;
+	padding: 0.5rem;
+	display: flex;
+	height: 100vh;
+	column-gap: 0.25rem;
+}
+
+.drawer-record-wrap .record-list-wrap {
+	width: max(30%, 420px);
+	flex: none;
+	max-height: 100%;
+	overflow: auto;
+}
+
+.drawer-record-wrap .record-view-wrap {
+	flex-grow: 1;
+	background-color: rgba(255, 255, 255, 0.6);
+	backdrop-filter: blur(5px);
+	padding: 0.5em;
+	max-height: 100%;
+	overflow: auto;
+	border-radius: 0.5rem;
+	box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+}
+
+.drawer-record-wrap .record-view-wrap .close-kit {
+	display: none;
+}
+
+@media screen and (max-width: 720px) {
+	.drawer-record-wrap {
+		overflow: hidden;
+	}
+	.drawer-record-wrap .record-list-wrap {
+		flex-basis: 100%;
+		width: 100%;
+	}
+
+	.drawer-record-wrap .record-view-wrap.show .close-kit {
+		display: flex;
+	}
+
+	.drawer-record-wrap .record-view-wrap {
+		position: absolute;
+		right: 0;
+		bottom: 0vh;
+		transform: translateX(100%);
+		width: 100%;
+		height: 94vh;
+		max-height: 94vh;
+		border-radius: 0;
+		z-index: 1000;
+	}
+
+	.drawer-record-wrap .record-view-wrap.show {
+		transform: translateX(0);
+	}
+}
+
+.drawer-record-wrap .record-list-wrap .wrap-header {
+	background-color: #fffa;
+	backdrop-filter: blur(3px);
+	margin: 0 0.25em 0.25em;
+	padding: 0.5em 0.25em;
+	font-size: 1.2em;
+	font-weight: bold;
+	border-radius: 0.35em;
+}
+
+.record-list-wrap .wrap-header .wrap-title {
+	padding-left: 0.5em;
+}
+
+.record-list-wrap .record-list {
+	display: flex;
+	flex-flow: row wrap;
+	padding: 0.25em;
+	gap: 0.5em;
+	justify-content: space-between;
+}
+
+.record-list .record-item {
+	position: relative;
+	width: 100%;
+	padding: 0.5em 0.5em;
+	display: flex;
+	flex-flow: column wrap;
+
+	background: linear-gradient(to bottom right, #fff8, #fffc);
+	backdrop-filter: blur(3px);
+	border-radius: 0.5em;
+	box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.1);
+	border: 1px solid transparent;
+	transition: all 0.2s ease;
+}
+
+.record-list .record-item:hover {
+	border-color: var(--color-green);
+	background-color: #fff;
+}
+
+.record-list .record-item:hover .item-title {
+	color: var(--color-blue);
+}
+
+.record-item:hover .item-tag-list {
+	opacity: 1;
+}
+
+.record-list .record-item .item-header {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.record-list .record-item .item-header .item-title {
+	font-size: 1.05em;
+	font-weight: bold;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	flex-grow: 1;
+	cursor: pointer;
+}
+
+.record-list .record-item .item-header .kit-box-wrap {
+	font-size: 1.1rem;
+	flex-basis: auto;
+	padding: 0;
+	transition: all 0.2s ease;
+}
+
+.record-list .record-item .item-pubtime,
+.record-list .record-item .item-description {
+	font-size: 0.8em;
+	color: #777;
+	min-height: 1.4em;
+	line-height: 1.4em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+	white-space: nowrap;
+}
+
+.record-item .item-tag-list {
+	position: absolute;
+	bottom: 0.5em;
+	right: 0.5em;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-end;
+	font-size: 0.8em;
+	gap: 0.25em;
+	opacity: 0.5;
+}
+
+.item-tag-list .tag-item {
+	position: relative;
+	user-select: none;
+}
+
+.item-tag-list .tag-item:not(.tag-time) {
+	background-color: var(--color-blue);
+	color: #fff;
+	padding: 0em 0.5em;
+	border-radius: 0.25em;
+}
+
+.item-tag-list .tag-time {
+	margin-right: auto;
+	color: #a1a7af;
+}
+
+.record-view-wrap .wrap-content {
+	width: 100%;
+}
+
+.drawer-record-wrap .record-view-wrap .kit-box-wrap {
+	top: 0.25rem;
+	right: 0.25rem;
+	font-size: 1.15rem;
+}
+
+.record-view-wrap .record-title {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.record-view-wrap .record-detail-wrap {
+	font-size: 0.85em;
+	margin: 0.25em 0;
+	padding: 0.125rem 0.25rem;
+	border-radius: 0.25rem;
+	color: #444;
+	background-color: #0003;
+}
+
+.record-view-wrap .editormd-html-preview {
+	padding: 1px;
+	background-color: transparent;
+}
+
+/* ============== record control wrap ================ */
+.record-control-wrap {
+	position: fixed;
+	bottom: 1rem;
+	width: auto;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.record-control-wrap .add-record-btn {
+	position: relative;
+	font-size: 2.5rem;
+	width: 1.25em;
+	height: 1.25em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	cursor: pointer;
+	user-select: none;
+	transition: all 0.2s ease;
+}
+
+.record-control-wrap .add-record-btn:hover .fa {
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.record-control-wrap .add-record-btn::before {
+	--s: 5px;
+	content: "";
+	position: absolute;
+	width: 110%;
+	height: 110%;
+	border-radius: 50%;
+	background: conic-gradient(
+		from 25deg,
+		#f8a201 25%,
+		#fa2402 0 50%,
+		#fdb3b0 0 75%,
+		#02dde1 0
+	);
+	-webkit-mask: repeating-conic-gradient(#0000 0 25deg, #000 23% 25%),
+		radial-gradient(var(--s) at var(--s) 50%, #000 97%, #0000)
+			left/calc(100% - 2 * var(--s)) 100% repeat-x,
+		radial-gradient(var(--s) at 50% var(--s), #000 97%, #0000) top / 100%
+			calc(100% - 2 * var(--s)) repeat-y;
+	backdrop-filter: blur(2px);
+	animation: rotate360 3s linear infinite;
+	z-index: -1;
+}
+
+.record-control-wrap .add-record-btn .fa {
+	width: 85%;
+	height: 85%;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff8;
+	backdrop-filter: blur(2px);
+	box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.8);
+	color: #fff8;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+	border: 2px solid transparent;
+	transition: all 0.1s ease;
+}
+
+/* ============== record edit wrap ================ */
+.record-editor-wrap {
+	display: flex;
+	flex-flow: column nowrap;
+	height: min(80vh, 720px);
+	min-height: 100%;
+	font-size: min(14px, 1rem);
+}
+
+.record-editor-wrap .editor-control {
+	flex-grow: 0;
+	padding: 0.25rem;
+}
+
+.record-editor-wrap .record-form-wrap {
+	padding: 0.25rem;
+}
+
+.record-editor-wrap .record-form-wrap .form-group {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.record-editor-wrap .record-form-wrap .form-group label:first-child {
+	width: 5em;
+	flex: none;
+}
+
+.record-editor-wrap .record-form-wrap .form-group .form-control {
+	flex-basis: auto;
+	flex-grow: 1;
+	max-width: 50em;
+	width: unset;
+	font-size: inherit;
+}
+
+@media screen and (max-width: 720px) {
+	.record-editor-wrap .record-form-wrap .form-group .form-control {
+		flex-basis: 100%;
+	}
+}
+
+.record-editor-wrap .editor-wrap {
+	flex-grow: 1;
+	min-height: 50vh;
+}
