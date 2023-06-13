@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>picture view 图片查看</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../lib/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../base/style.css">
+    <link rel="stylesheet" href="../base/components.css">
+    <link rel="stylesheet" href="../base/keyframes.css">
+    <link rel="stylesheet" href="../modal/style.css">
+    <link rel="stylesheet" href="../kit-box/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="modal fade" id="pic-view-modal">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">图片查看</h5>
+                    <div class="modal-control-wrap">
+                        <button type="button" class="fa fa-close" data-dismiss="modal"></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="pic-view-wrap">
+                        <div class="kit-box-wrap pos-abs">
+                            <div class="kit-item text-kit" onclick="resetPicViewModal()">还原</div>
+                        </div>
+                        <div class="pic-zoom" data-name="zoom">100%</div>
+                        <div class="pre-pic-btn" title="前一张"><i class="fa fa-chevron-left"></i></div>
+                        <div class="next-pic-btn" title="下一张"><i class="fa fa-chevron-right"></i></div>
+                        <div class="pic-wrap">
+                            <img src="https://w.wallhaven.cc/full/7p/wallhaven-7p1zjv.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pic-list">
+        <div class="pic-item" onclick="viewPic(this)"><img src="https://w.wallhaven.cc/full/7p/wallhaven-7p1zjv.jpg"
+                alt=""></div>
+        <div class="pic-item" onclick="viewPic(this)"><img src="https://images.alphacoders.com/699/699287.jpg" alt="">
+        </div>
+        <div class="pic-item" onclick="viewPic(this)"><img src="https://images8.alphacoders.com/677/677543.jpg" alt="">
+        </div>
+        <div class="pic-item" onclick="viewPic(this)"><img src="https://images5.alphacoders.com/587/587597.jpg" alt="">
+        </div>
+    </div>
+    <div class="pic-list">
+        <div class="pic-item" onclick="viewPic(this)"><img src="https://w.wallhaven.cc/full/kx/wallhaven-kx16ym.png"
+                alt=""></div>
+        <div class="pic-item" onclick="viewPic(this)"><img src="https://w.wallhaven.cc/full/kx/wallhaven-kx1qrd.jpg"
+                alt=""></div>
+        <div class="pic-item" onclick="viewPic(this)"><img src="https://w.wallhaven.cc/full/1p/wallhaven-1pxd1w.png"
+                alt=""></div>
+        <div class="pic-item" onclick="viewPic(this)"><img src="https://w.wallhaven.cc/full/85/wallhaven-85k65o.png"
+                alt=""></div>
+        <div class="pic-item" onclick="viewPic(this)"><img src="https://w.wallhaven.cc/full/we/wallhaven-we6gmx.jpg"
+                alt=""></div>
+        <div class="pic-item" onclick="viewPic(this)"><img src="https://w.wallhaven.cc/full/qz/wallhaven-qz3wel.png"
+                alt=""></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="../lib/bootstrap/bootstrap.js"></script>
+    <script src="../base/main.js"></script>
+    <script src="../base/components.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

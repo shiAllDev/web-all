@@ -51,6 +51,7 @@
 
 .kit-box-wrap[vertical] {
 	flex-flow: column wrap-reverse;
+	align-content: end;
 }
 
 .kit-box-wrap .kit-item {
@@ -69,8 +70,13 @@
 	width: 1.5em;
 	height: 1.5em;
 	background-color: #fffa;
-	backdrop-filter: blur(3px);
+	backdrop-filter: blur(1px);
 	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+.kit-box-wrap .kit-item.text-kit {
+	width: auto;
+	padding: 0 0.5em;
 }
 
 .kit-box-wrap:not(.no-shadow) .kit-item:hover {

@@ -74,6 +74,7 @@
 -   绝对定位
     `.pos-abs`
 -   kit-item
+    -   `.text-kit`文本按钮，宽度 auto
 -   无边框阴影`.kit-box-wrap.no-shadow`
 
 ### bootstrap+modal 模态框
@@ -263,5 +264,16 @@
 
 ### 图片展示界面
 
+-   展示界面`#pic-view-modal`
+    -   `.pic-view-wrap`
+        -   `.kit-box-wrap`
+            -   `.kit-item onclick="resetPicViewModal()"`
+        -   `.pic-zoom[data-name=zoom]`展示缩放比例
+        -   `.pre-pic-btn`
+        -   `next-pic-btn`
+        -   `.pic-wrap>img`
 -   前/后同伴图片
+    -   主要展示格式为`.pic-item[onclick=viewPic(this)]>img`的图片列表
 -   放大/缩小/拖动
+    -   鼠标滚动时进行图片缩放，最小缩放大小为原样
+    -   鼠标可以对图片进行拖拽

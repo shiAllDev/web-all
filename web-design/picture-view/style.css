@@ -1,0 +1,139 @@
+.pic-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 10px;
+}
+
+.pic-list .pic-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pic-list .pic-item img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: cover;
+}
+
+#pic-view-modal .modal-dialog {
+	max-width: min(90vw, 1280px);
+}
+
+#pic-view-modal .modal-content {
+	background-color: rgba(255, 255, 255, 0.4);
+	backdrop-filter: blur(5px);
+	border-radius: 0.5rem;
+	width: 100%;
+	overflow: auto;
+}
+
+#pic-view-modal .modal-header {
+	background-color: #fff8;
+	border-bottom: none;
+}
+
+.pic-view-wrap {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-height: 100%;
+	overflow: hidden;
+}
+
+.pic-view-wrap:hover .pic-zoom,
+.pic-view-wrap:hover .pre-pic-btn,
+.pic-view-wrap:hover .next-pic-btn,
+.pic-view-wrap:hover .kit-box-wrap .kit-item {
+	opacity: 1;
+}
+
+.pic-view-wrap .kit-box-wrap {
+	font-size: 16px;
+}
+
+.pic-view-wrap .kit-box-wrap .kit-item {
+	background-color: #0007;
+	opacity: 0;
+	color: #fff;
+}
+
+.pic-view-wrap .pic-zoom {
+	position: absolute;
+	top: 0.25rem;
+	left: 0.25rem;
+	z-index: 1;
+	padding: 0.25rem 0.75rem;
+	background-color: #0007;
+	border-radius: 0.25rem;
+	color: #fff;
+	opacity: 0.25;
+    user-select: none;
+	transition: all 0.5s;
+}
+
+.pic-view-wrap .pre-pic-btn,
+.pic-view-wrap .next-pic-btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.5rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(4px);
+	box-shadow: 0 0 4px 0px #0003;
+	color: #0003;
+	z-index: 999;
+	cursor: pointer;
+	user-select: none;
+	transition: all 0.3s;
+	opacity: 0;
+}
+.pic-view-wrap .pre-pic-btn:hover,
+.pic-view-wrap .next-pic-btn:hover {
+	color: #000;
+}
+
+.pic-view-wrap:hover .pre-pic-btn {
+	left: 1rem;
+}
+.pic-view-wrap:hover .next-pic-btn {
+	right: 1rem;
+}
+
+.pic-view-wrap .pre-pic-btn {
+	padding-right: 0.25em;
+	left: 0rem;
+}
+
+.pic-view-wrap .next-pic-btn {
+	padding-left: 0.25em;
+	right: 0rem;
+}
+
+.pic-view-wrap .pic-wrap {
+	height: 100%;
+	width: 100%;
+	max-height: 100%;
+	max-width: 100%;
+	padding: 0.25rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: move;
+	user-select: none;
+}
+
+.pic-view-wrap .pic-wrap img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: center;
+	border-radius: 0.5rem;
+	/* transition: transform 0.2s ease-in-out; */
+    /* transform-origin: 0 0; */
+}
